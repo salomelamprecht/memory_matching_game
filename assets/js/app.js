@@ -91,7 +91,7 @@ function checkIfMatch() {
   let cards = document.querySelectorAll('img');
   const firstCardId = cardsSelectedId[0];
   const secondCardId = cardsSelectedId[1];
-  if (cardsSelected[0] === cardsSelected[1]) {
+  if (cardsSelected[0] === cardsSelected[1] && cardsSelectedId[0] !== cardsSelectedId[1]) {
     cards[firstCardId].setAttribute("src", "assets/img/blank.png");
     cards[secondCardId].setAttribute("src", "assets/img/blank.png");
     cardsMatched.push(cardsSelected);
