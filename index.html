@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Memory Matching Game</title>
+    <!-- Meta Tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- load Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- load Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- load CSS File -->
+    <link rel="stylesheet" href="assets/css/main.css" type="text/css" />
+  </head>
+
+  <body>
+    <section>
+      <h1 class="text-center">Memory Game</h1>
+      <div class="container">
+        <div>
+          <p class="text-center"><strong>Instructions</strong></p>
+          <p class="text-center">
+            Select your required theme and click on Start Game. Once the game
+            has started pick two cards, if the cards match, pick another two
+            cards until you have matched all the cards. If your cards do not
+            match, continue selecting cards until they match. If you would like
+            to restart your game, click restart or if you want to quit the game,
+            select quit.
+          </p>
+          <p class="text-center">Enjoy your game!</p>
+        </div>
+        <div class="text-center theme">
+          <button class="btn btn-primary princesses themeSelected">Princesses</button>
+          <button class="btn btn-primary dadjokes">Dad Jokes</button>
+        </div>
+      </div>
+    </section>
+    <section class="difficulty">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="text-center">Choose the game difficulty.</h2>
+          <button class="btn btn-success easy">Easy</button>
+          <button class="btn btn-warning medium">Medium</button>
+          <button class="btn btn-danger hard">Hard</button>
+        </div>
+      </div>
+    </section>
+    <div class="container">
+      <div class="text-center game-functions">
+        <button class="btn btn-warning restart">Restart</button>
+        <button class="btn btn-warning quit" onclick="quit()">Quit</button>
+      </div>
+    </div>
+    <div class="grid"></div>
+    <div class="container">
+      <div class="text-center counters">
+        <div>
+          <span class="moves">0 Move(s)</span>
+          <span class="time">0 time elapsed</span>
+        </div>
+        <div>Score<span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- add jQuery cdn -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- add Bootstrap jQuery & JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- load app&jokes.js -->
+    <script type="text/javascript" src="assets/js/app.js"></script>
+    <script type="text/javascript" src="assets/js/jokes.js"></script>
+
+  </body>
+
+  <footer class="text-center">
+    <span
+      >Created by Salome Lamprecht. For any comments or suggestions, please
+      <a href="mailto:salomelamprecht@gmail.com">click here</a>.</span
+    >
+  </footer>
+</html>

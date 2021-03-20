@@ -1,0 +1,36 @@
+* {
+	margin:0;
+	padding:0;
+	}
+
+	h1 {
+		padding-top: 20px;
+	}
+	
+	body {
+		font-family: "Bubblegum Sans", sans-serif;
+		font-size: 20px;
+	}
+
+.grid {
+	display: flex;
+	box-sizing: border-box;
+	margin: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+	.container {
+		padding: 5px;
+	} 
+
+img {
+		flex: 0 0 50px;
+		position:relative;
+		padding: 5px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+		box-shadow: 5px 5px 10px -4px rgba(0,0,0,0.95);
+	} 
