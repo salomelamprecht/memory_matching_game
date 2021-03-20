@@ -70,6 +70,10 @@ $(function chooseTheme() {
   });
 });
 
+// randomise the cards //
+princessCardsArrayEasy.sort(() => 0.5 - Math.random());
+
+
 // create gameboard //
 function gameBoard() {
   for (i = 0; i < princessCardsArrayEasy.length; i++) {
