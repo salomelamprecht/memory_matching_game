@@ -20,6 +20,7 @@
   justify-content: center;
   align-items: center;
   align-content: center;
+	max-width: 66.66vh;
 }
 	.container {
 		padding: 5px;
