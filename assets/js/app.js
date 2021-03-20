@@ -2,6 +2,12 @@ const grid = $(".grid").hide();
 const counters = $(".counters").hide();
 const gameFunctions = $(".game-functions").hide();
 const levels = $(".difficulty").hide();
+let score = document.querySelector("#score");
+let moves = document.querySelector(".moves");
+let second = 0, minute = 0;
+let timer = document.querySelector(".timer");
+let interval;
+
 
 // Arrays //
 cardsSelected = [];
@@ -52,6 +58,22 @@ const princessCardsArrayEasy = [
   },
 ];
 
+// timer //
+function startTime(){
+      interval = setInterval(function(){
+          timer.innerHTML = minute+"mins "+second+"secs";
+          second++;
+          if(second == 60){
+              minute++;
+              second = 0;
+          }
+          if(minute == 60){
+              hour++;
+              minute = 0;
+          }
+      },1000);
+}  
+
 // show hide html theme difficulty and call gameBoard() //
 $(function chooseTheme() {
   $('.princesses').click(function () {
@@ -63,6 +85,7 @@ $(function chooseTheme() {
     $(grid).show();
     $(counters).show();
     $(gameFunctions).show();
+    startTime();
     $('.quit').click(function () {
       $('.theme').show();
       $(grid).hide();
@@ -98,9 +121,14 @@ function checkIfMatch() {
   } else {
     cards[firstCardId].setAttribute("src", "assets/img/card_reverse_pink.png");
     cards[secondCardId].setAttribute("src", "assets/img/card_reverse_pink.png");
-  }
+  } 
   cardsSelected = [];
   cardsSelectedId = [];
+  score.textContent = cardsMatched.length;
+  if(cardsMatched.length === princessCardsArrayEasy.length/2) {
+    score.textContent = "Well done! You have won.  Why not try a different level or theme.";
+  }
+  clearInterval();
 }
 
 // flip cards over when clicked //
@@ -114,14 +142,13 @@ function flipcard() {
   // if two cards are selected then check for a match //
   if (cardsSelected.length === 2) {
     // set a timeout so that there is time to check for a match before user can select more cards //
-    setTimeout(checkIfMatch, 750);
-  } 
+    setTimeout(checkIfMatch, 500);
+  }
 }
 
 gameBoard();
 
 function quit() {
-
   window.location.href="index.html";
-  
+  clearInterval(timer);  
 }
