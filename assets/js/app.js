@@ -4,6 +4,8 @@ const gameFunctions = $(".game-functions").hide();
 const levels = $(".difficulty").hide();
 
 // Arrays //
+cardsSelected = [];
+cardsSelectedId = [];
 // create princess theme card array easy level 10 cards //
 const princessCardsArrayEasy = [
   {
@@ -74,9 +76,24 @@ function gameBoard() {
     let card = document.createElement("img");
     card.setAttribute("src", "assets/img/card_reverse_pink.png");
     card.setAttribute("data-id", i);
-    // card.addEventListener("click", flipcard); //
+    card.addEventListener("click", flipcard); 
     $(".grid").append(card);
   } 
+}
+
+// flip cards over when clicked //
+function flipcard() {
+  let cardId = this.getAttribute("data-id");
+  // push cards selected into the emtpy array cardsSelected //
+  cardsSelected.push(princessCardsArrayEasy[cardId].name);
+  cardsSelectedId.push(cardId);
+  // set the attributes of the cards selected to img in the princess cards array //
+  this.setAttribute("src", princessCardsArrayEasy[cardId].img);
+  // if two cards are selected then check for a match //
+  /*if (cardsSelected.length === 2) {
+    // set a timeout so that there is time to check for a match before user can select more cards //
+    setTimeout(checkIfMatch, 750);
+  } */
 }
 
 gameBoard();
