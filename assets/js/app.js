@@ -7,7 +7,8 @@ let moves = document.querySelector(".moves");
 let second = 0, minute = 0;
 let timer = document.querySelector(".timer");
 let interval;
-
+let easyNumberOfMatches = 5;
+let numberOfMatchesThisGame = 0;
 
 // Arrays //
 cardsSelected = [];
@@ -58,7 +59,7 @@ const princessCardsArrayEasy = [
   },
 ];
 
-// timer //
+// create timer //
 function startTime(){
       interval = setInterval(function(){
           timer.innerHTML = minute+"mins "+second+"secs";
@@ -118,6 +119,13 @@ function checkIfMatch() {
     cards[firstCardId].setAttribute("src", "assets/img/blank.png");
     cards[secondCardId].setAttribute("src", "assets/img/blank.png");
     cardsMatched.push(cardsSelected);
+    if (numberOfMatchesThisGame !== easyNumberOfMatches) {
+      numberOfMatchesThisGame ++;
+    }
+    if (numberOfMatchesThisGame === easyNumberOfMatches) {
+      window.alert("Well done, you've won!");
+      restart();
+    }
   } else {
     cards[firstCardId].setAttribute("src", "assets/img/card_reverse_pink.png");
     cards[secondCardId].setAttribute("src", "assets/img/card_reverse_pink.png");
@@ -147,6 +155,10 @@ function flipcard() {
 }
 
 gameBoard();
+
+function restart() {
+  window.location.reload();
+}
 
 function quit() {
   window.location.href="index.html";
