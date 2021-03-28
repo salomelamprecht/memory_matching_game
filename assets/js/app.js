@@ -3,21 +3,22 @@ const counters = $('.counters').hide();
 const gameFunctions = $('.game-functions').hide();
 const levels = $('.difficulty').hide();
 let score = document.querySelector('#score');
-let moves = document.querySelector('.moves');
+let movesText = document.querySelector('.moves');
+let moves = 0;
 let second = 0, minute = 0;
 let timer = document.querySelector('.timer');
 let interval;
 
-// create global variable for chosen theme and difficulty array //
+// create global variable for chosen theme and difficulty array 
 let cardsArrayChosen = [];
 
-// Arrays //
+// Arrays 
 cardsSelected = [];
 cardsSelectedId = [];
 cardsMatched = [];
 
-// create princess theme card arrays easy to hard //
-// princess theme //
+// create theme arrays easy to hard 
+// princess theme 
 const princessCardsArrayEasy = [
   {
     name: 'princess1',
@@ -146,7 +147,7 @@ const princessCardsArrayHard = [
     img: 'assets/img/princesses/cinderella-shoe.png',
   },
 ];
-// mining theme //
+// mining theme 
 const miningCardsArrayEasy = [
   {
     name: 'axe',
@@ -275,25 +276,406 @@ const miningCardsArrayHard = [
     img: 'assets/img/mining/money-bag.png',
   },
 ];
+// alphabet and numbers theme
+const alphabetNumberCardsArrayEasy = [
+  {
+    name: 'letterB',
+    img: 'assets/img/alphabet_numbers/b.png',
+  },
+  {
+    name: 'letterB',
+    img: 'assets/img/alphabet_numbers/b.png',
+  },
+  {
+    name: 'letterR',
+    img: 'assets/img/alphabet_numbers/r.png',
+  },
+  {
+    name: 'letterR',
+    img: 'assets/img/alphabet_numbers/r.png',
+  },
+  {
+    name: 'letterM',
+    img: 'assets/img/alphabet_numbers/m.png',
+  },
+  {
+    name: 'letterM',
+    img: 'assets/img/alphabet_numbers/m.png',
+  },
+  {
+    name: 'letterS',
+    img: 'assets/img/alphabet_numbers/s.png',
+  },
+  {
+    name: 'letterS',
+    img: 'assets/img/alphabet_numbers/s.png',
+  },
+  {
+    name: 'letterE',
+    img: 'assets/img/alphabet_numbers/e.png',
+  },
+  {
+    name: 'letterE',
+    img: 'assets/img/alphabet_numbers/e.png',
+  },
+]
+const alphabetNumberCardsArrayMedium = [
+  ...alphabetNumberCardsArrayEasy,
+  {
+    name: 'letterP',
+    img: 'assets/img/alphabet_numbers/p.png',
+  },
+  {
+    name: 'letterP',
+    img: 'assets/img/alphabet_numbers/p.png',
+  },
+  {
+    name: 'letterF',
+    img: 'assets/img/alphabet_numbers/f.png',
+  },
+  {
+    name: 'letterF',
+    img: 'assets/img/alphabet_numbers/f.png',
+  },
+  {
+    name: 'letterA',
+    img: 'assets/img/alphabet_numbers/a.png',
+  },{
+    name: 'letterA',
+    img: 'assets/img/alphabet_numbers/a.png',
+  },
+  {
+    name: 'letterZ',
+    img: 'assets/img/alphabet_numbers/z.png',
+  },{
+    name: 'letterZ',
+    img: 'assets/img/alphabet_numbers/z.png',
+  },
+  {
+    name: 'number2',
+    img: 'assets/img/alphabet_numbers/2.png',
+  },
+  {
+    name: 'number2',
+    img: 'assets/img/alphabet_numbers/2.png',
+  },
+]
+const alphabetNumberCardsArrayHard = [
+  ...alphabetNumberCardsArrayMedium,
+  {
+    name: 'number3',
+    img: 'assets/img/alphabet_numbers/3.png',
+  },
+  {
+    name: 'number3',
+    img: 'assets/img/alphabet_numbers/3.png',
+  },
+  {
+    name: 'number5',
+    img: 'assets/img/alphabet_numbers/5.png',
+  },
+  {
+    name: 'number5',
+    img: 'assets/img/alphabet_numbers/5.png',
+  },
+  {
+    name: 'number7',
+    img: 'assets/img/alphabet_numbers/7.png',
+  },
+  {
+    name: 'number7',
+    img: 'assets/img/alphabet_numbers/7.png',
+  },
+  {
+    name: 'number9',
+    img: 'assets/img/alphabet_numbers/9.png',
+  },
+  {
+    name: 'number9',
+    img: 'assets/img/alphabet_numbers/9.png',
+  },
+  {
+    name: 'number0',
+    img: 'assets/img/alphabet_numbers/0.png',
+  },
+  {
+    name: 'number0',
+    img: 'assets/img/alphabet_numbers/0.png',
+  },
+]
+// shapes theme
+const shapesCardsArrayEasy = [
+  {
+    name: 'circle',
+    img: 'assets/img/shapes/circle.png',
+  },
+  {
+    name: 'circle',
+    img: 'assets/img/shapes/circle.png',
+  },
+  {
+    name: 'cube',
+    img: 'assets/img/shapes/cube.png',
+  },
+  {
+    name: 'cube',
+    img: 'assets/img/shapes/cube.png',
+  },
+  {
+    name: 'cylinder',
+    img: 'assets/img/shapes/cylinder.png',
+  },
+  {
+    name: 'cylinder',
+    img: 'assets/img/shapes/cylinder.png',
+  },
+  {
+    name: 'rectangle',
+    img: 'assets/img/shapes/rectangle.png',
+  },
+  {
+    name: 'rectangle',
+    img: 'assets/img/shapes/rectangle.png',
+  },
+  {
+    name: 'square',
+    img: 'assets/img/shapes/square.png',
+  },
+  {
+    name: 'square',
+    img: 'assets/img/shapes/square.png',
+  },
+]
+const shapesCardsArrayMedium = [
+  ...shapesCardsArrayEasy,
+  {
+    name: 'hexagon',
+    img: 'assets/img/shapes/hexagon.png',
+  },
+  {
+    name: 'hexagon',
+    img: 'assets/img/shapes/hexagon.png',
+  },
+  {
+    name: 'pentagon',
+    img: 'assets/img/shapes/pentagon.png',
+  },
+  {
+    name: 'pentagon',
+    img: 'assets/img/shapes/pentagon.png',
+  },
+  {
+    name: 'triangle',
+    img: 'assets/img/shapes/triangle.png',
+  },
+  {
+    name: 'triangle',
+    img: 'assets/img/shapes/triangle.png',
+  },
+  {
+    name: 'pyramid',
+    img: 'assets/img/shapes/pyramid.png',
+  },
+  {
+    name: 'pyramid',
+    img: 'assets/img/shapes/pyramid.png',
+  },
+  {
+    name: 'tetrahedron',
+    img: 'assets/img/shapes/tetrahedron.png',
+  },
+  {
+    name: 'tetrahedron',
+    img: 'assets/img/shapes/tetrahedron.png',
+  },
+]
+const shapesCardsArrayHigh = [
+  ...shapesCardsArrayMedium,
+  {
+    name: 'dodecahedron',
+    img: 'assets/img/shapes/dodecahedron.png',
+  },
+  {
+    name: 'dodecahedron',
+    img: 'assets/img/shapes/dodecahedron.png',
+  },
+  {
+    name: 'dodecahedron2',
+    img: 'assets/img/shapes/dodecahedron2.png',
+  },
+  {
+    name: 'dodecahedron2',
+    img: 'assets/img/shapes/dodecahedron2.png',
+  },
+  {
+    name: 'octahedron',
+    img: 'assets/img/shapes/octahedron.png',
+  },
+  {
+    name: 'octahedron',
+    img: 'assets/img/shapes/octahedron.png',
+  },
+  {
+    name: 'hexahedron',
+    img: 'assets/img/shapes/hexahedron.png',
+  },
+  {
+    name: 'hexahedron',
+    img: 'assets/img/shapes/hexahedron.png',
+  },
+  {
+    name: 'sphere',
+    img: 'assets/img/shapes/sphere.png',
+  },
+  {
+    name: 'sphere',
+    img: 'assets/img/shapes/sphere.png',
+  },
+]
+// wireframes theme
+const wireframesCardsArrayEasy = [
+  {
+    name: 'application',
+    img: 'assets/img/wireframes/application.png',
+  },
+  {
+    name: 'application',
+    img: 'assets/img/wireframes/application.png',
+  },
+  {
+    name: 'article',
+    img: 'assets/img/wireframes/article.png',
+  },
+  {
+    name: 'article',
+    img: 'assets/img/wireframes/article.png',
+  },
+  {
+    name: 'blocks',
+    img: 'assets/img/wireframes/blocks.png',
+  },
+  {
+    name: 'blocks',
+    img: 'assets/img/wireframes/blocks.png',
+  },
+  {
+    name: 'body',
+    img: 'assets/img/wireframes/body.png',
+  },
+  {
+    name: 'body',
+    img: 'assets/img/wireframes/body.png',
+  },
+  {
+    name: 'bullet_form',
+    img: 'assets/img/wireframes/bullet-form.png',
+  },
+  {
+    name: 'bullet_form',
+    img: 'assets/img/wireframes/bullet-form.png',
+  },
+]
+const wireframesCardsArrayMedium = [
+  ...wireframesCardsArrayEasy,
+  {
+    name: 'criss_cross',
+    img: 'assets/img/wireframes/criss-cross.png',
+  },
+  {
+    name: 'criss_cross',
+    img: 'assets/img/wireframes/criss-cross.png',
+  },
+  {
+    name: 'dashboard',
+    img: 'assets/img/wireframes/dashboard.png',
+  },
+  {
+    name: 'dashboard',
+    img: 'assets/img/wireframes/dashboard.png',
+  },
+  {
+    name: 'elements',
+    img: 'assets/img/wireframes/elements.png',
+  },
+  {
+    name: 'elements',
+    img: 'assets/img/wireframes/elements.png',
+  },
+  {
+    name: 'header',
+    img: 'assets/img/wireframes/header.png',
+  },
+  {
+    name: 'header',
+    img: 'assets/img/wireframes/header.png',
+  },
+  {
+    name: 'index',
+    img: 'assets/img/wireframes/index.png',
+  },
+  {
+    name: 'index',
+    img: 'assets/img/wireframes/index.png',
+  },
+]
+const wireframesCardsArrayHard = [
+  ...wireframesCardsArrayMedium,
+  {
+    name: 'instructions',
+    img: 'assets/img/wireframes/instructions.png',
+  },
+  {
+    name: 'instructions',
+    img: 'assets/img/wireframes/instructions.png',
+  },
+  {
+    name: 'media',
+    img: 'assets/img/wireframes/media.png',
+  },
+  {
+    name: 'media',
+    img: 'assets/img/wireframes/media.png',
+  },
+  {
+    name: 'parts',
+    img: 'assets/img/wireframes/parts.png',
+  },
+  {
+    name: 'parts',
+    img: 'assets/img/wireframes/parts.png',
+  },
+  {
+    name: 'searching',
+    img: 'assets/img/wireframes/searching.png',
+  },
+  {
+    name: 'searching',
+    img: 'assets/img/wireframes/searching.png',
+  },
+  {
+    name: 'sections',
+    img: 'assets/img/wireframes/sections.png',
+  },
+  {
+    name: 'sections',
+    img: 'assets/img/wireframes/sections.png',
+  },
+]
 
-// timer //
+// timer 
 function startTime() {
   interval = setInterval(function () {
-    timer.innerHTML = minute + 'mins ' + second + 'secs';
+    timer.innerHTML = `${minute} mins ${second} secs`;
     second++;
     if (second == 60) {
       minute++;
       second = 0;
     }
-    if (minute == 60) {
-      hour++;
-      minute = 0;
-    }
   }, 1000);
 }
 
 // ADD A STOP FUNCTION TO PERHAPS REWORK STARTTIME TO DO BOTH
-// show hide html theme difficulty and call gameBoard() //
+// show hide html theme difficulty and call gameBoard() 
 let choosePrincesstheme = function () {
   $('.easy').click(function () {
     gameSetup();
@@ -328,8 +710,59 @@ let chooseMiningTheme = function () {
     gameBoard();
   });
 };
+let chooseAlphabetNumberTheme = function() {
+    $('.easy').click(function () {
+      gameSetup();
+      cardsArrayChosen = alphabetNumberCardsArrayEasy;
+      gameBoard();
+    });
+    $('.medium').click(function () {
+      gameSetup();
+      cardsArrayChosen = alphabetNumberCardsArrayMedium;
+      gameBoard();
+    });
+    $('.hard').click(function () {
+      gameSetup();
+      cardsArrayChosen = alphabetNumberCardsArrayHard;
+      gameBoard();
+    });
+}
+let chooseShapesTheme = function() {
+  $('.easy').click(function () {
+    gameSetup();
+    cardsArrayChosen = shapesCardsArrayEasy;
+    gameBoard();
+  });
+  $('.medium').click(function () {
+    gameSetup();
+    cardsArrayChosen = shapesCardsArrayMedium;
+    gameBoard();
+  });
+  $('.hard').click(function () {
+    gameSetup();
+    cardsArrayChosen = shapesCardsArrayHigh;
+    gameBoard();
+  });
+}
+let chooseWireFramesTheme = function() {
+  $('.easy').click(function () {
+    gameSetup();
+    cardsArrayChosen = wireframesCardsArrayEasy;
+    gameBoard();
+  });
+  $('.medium').click(function () {
+    gameSetup();
+    cardsArrayChosen = wireframesCardsArrayMedium;
+    gameBoard();
+  });
+  $('.hard').click(function () {
+    gameSetup();
+    cardsArrayChosen = wireframesCardsArrayHard;
+    gameBoard();
+  });
+}
 
-// choose theme //
+// choose theme 
 $(function chooseTheme() {
   $('.princesses').click(function () {
     $(levels).show();
@@ -341,16 +774,31 @@ $(function chooseTheme() {
     $('.theme').hide();
     chooseMiningTheme();
   });
+  $('.alphabetNumber').click(function () {
+    $(levels).show();
+    $('.theme').hide();
+    chooseAlphabetNumberTheme();
+  });
+  $('.shapes').click(function () {
+    $(levels).show();
+    $('.theme').hide();
+    chooseShapesTheme();
+  });
+  $('.wireframes').click(function () {
+    $(levels).show();
+    $('.theme').hide();
+    chooseWireFramesTheme();
+  });
 });
 
-// show hide levels/difficulty when game is setup //
+// show hide levels/difficulty when game is setup 
 function toggleOn() {
   $(levels).hide();
   $(grid).show();
   $(counters).show();
   $(gameFunctions).show();
 }
-// once game is underway either restart or quit can be clicked //
+// once game is underway either restart or quit can be clicked 
 function toggleOff() {
   $(".quit").click(function () {
     window.location.href = 'index.html';
@@ -365,64 +813,66 @@ function toggleOff() {
   clearInterval(timer);
 }
 
-// create gamesetup function //
+// create gamesetup function 
 let gameSetup = function () {
   toggleOn();
   startTime();
   toggleOff();
 };
 
-// create gameboard //
+// create gameboard 
 function gameBoard() {
-  // randomise the cards //
+  // randomise the cards 
   cardsArrayChosen.sort(() => 0.5 - Math.random());
   for (let i = 0; i < cardsArrayChosen.length; i++) {
     let card = document.createElement('img');
-    card.setAttribute('src', 'assets/img/card_reverse_pink.png');
+    card.setAttribute('src', 'assets/img/squarelightgrey.png');
     card.setAttribute('data-id', i);
     card.addEventListener('click', flipcard);
     $('.grid').append(card);
   }
 }
 
-// check if the cards selected were a match //
+// check if the cards selected were a match 
 function checkIfMatch() {
   let cards = document.querySelectorAll('img');
   const firstCardId = cardsSelectedId[0];
   const secondCardId = cardsSelectedId[1];
   if (
     cardsSelected[0] === cardsSelected[1] &&
-    cardsSelectedId[0] !== cardsSelectedId[1]
-  ) {
+    firstCardId !== secondCardId) {
     cards[firstCardId].setAttribute('src', 'assets/img/blank.png'); 
-    cards[secondCardId].setAttribute('src', 'assets/img/blank.png'); 
+    cards[secondCardId].setAttribute('src', 'assets/img/blank.png');
+    cards[firstCardId].setAttribute("class", "transparentImage");
+    cards[secondCardId].setAttribute("class", "transparentImage");
     cardsMatched.push(cardsSelected);
   } else {
-    cards[firstCardId].setAttribute('src', 'assets/img/card_reverse_pink.png');
-    cards[secondCardId].setAttribute('src', 'assets/img/card_reverse_pink.png');
+    cards[firstCardId].setAttribute('src', 'assets/img/squarelightgrey.png');
+    cards[secondCardId].setAttribute('src', 'assets/img/squarelightgrey.png');
   }
   cardsSelected = [];
   cardsSelectedId = [];
   score.textContent = cardsMatched.length;
   if (cardsMatched.length === cardsArrayChosen.length / 2) {
-   // score.textContent =
-   setInterval("timer", 500);
-      alert("Well done! You have won.  Why not try a different level or theme.");
-  }
+    alert("Congratulations! You have won.  Why not try another level or get a joke!");
+    document.location.reload();
   clearInterval();
 }
+moves++;
+movesText.textContent = `${moves} move(s)`;
+}
 
-// flip cards over when clicked //
+// flip cards over when clicked 
 function flipcard() {
   let cardId = this.getAttribute('data-id');
-  // push cards selected into the emtpy array cardsSelected //
+  // push cards selected into the emtpy array cardsSelected 
   cardsSelected.push(cardsArrayChosen[cardId].name);
   cardsSelectedId.push(cardId);
-  // set the attributes of the cards selected to img in the princess cards array //
+  // set the attributes of the cards selected to img in the princess cards array 
   this.setAttribute('src', cardsArrayChosen[cardId].img);
-  // if two cards are selected then check for a match //
+  // if two cards are selected then check for a match 
   if (cardsSelected.length === 2) {
-    // set a timeout so that there is time to check for a match before user can select more cards //
+    // set a timeout so that there is time to check for a match before user can select more cards 
     setTimeout(checkIfMatch, 500);
   }
 }

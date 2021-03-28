@@ -10,15 +10,40 @@
     />
 
     <!-- load Bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- load Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap"
       rel="stylesheet"
+    />
+
+    <!-- load fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
     />
 
     <!-- load CSS File -->
@@ -42,8 +67,13 @@
           <p class="text-center">Enjoy your game!</p>
         </div>
         <div class="text-center theme">
-          <button class="btn btn-primary princesses">Princesses</button>
-          <button class="btn btn-primary mining">Mining</button>
+          <button class="btn btn-danger princesses">Princesses</button>
+          <button class="btn btn-warning mining">Mining</button>
+          <button class="btn btn-success alphabetNumber">
+            Letters & Numbers
+          </button>
+          <button class="btn btn-primary shapes">Shapes</button>
+          <button class="btn btn-light wireframes">Wireframes</button>
         </div>
       </div>
     </section>
@@ -58,33 +88,65 @@
       </div>
     </section>
     <section class="game-functions">
-    <div class="container">
-      <div class="text-center">
-        <button class="btn btn-warning restart">Restart</button>
-        <button class="btn btn-warning quit">Quit</button>
+      <div class="container">
+        <div class="text-center">
+          <button class="btn btn-warning restart">Restart</button>
+          <button class="btn btn-warning quit">Quit</button>
+        </div>
       </div>
-    </div>
     </section>
     <section>
-    <div class="grid"></div>
-    <div class="text-center createContent">
-      <button class="btn btn-primary" id="jokesBtn">Jokes</button>
-      <div id="jokesDiv"></div>
-    </div>
-    </section>
-    <section>
-    <div class="container">
-      <div class="text-center counters">
+      <div class="container">
+        <div class="grid"></div>
+      </div>
+      <div class="text-center jokeSection">
         <div>
-          <span class="moves">0 Move(s)</span>
-          <span class="timer">0 time elapsed</span>
-        </div>
-        <div>Score <span id="score"></span>
+          Want to hear a joke instead? <i class="far fa-hand-point-down"></i>
         </div>
       </div>
-    </div>
+      <div class="text-center jokeSection">
+        <button
+          class="btn btn-dark"
+          data-toggle="modal"
+          data-target="#exampleModalCenter"
+          id="jokesBtn"
+        >
+          Jokes
+        </button>
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModalCenter"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalCenterTitle"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-body" id="jokesDiv"></div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-dark" data-dismiss="modal">
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    
+    <section>
+      <div class="container">
+        <div class="text-center counters">
+          <div>
+            <span class="moves">0 Move(s)</span>
+            <span class="timer">0 time elapsed</span>
+          </div>
+          <div>Score <span id="score"></span></div>
+        </div>
+      </div>
+    </section>
+
     <!-- add jQuery cdn -->
     <script
       src="https://code.jquery.com/jquery-3.5.1.js"
@@ -112,7 +174,6 @@
     <!-- load app.js -->
     <script type="text/javascript" src="assets/js/app.js" defer></script>
     <script type="text/javascript" src="assets/js/script.js" defer></script>
-
   </body>
 
   <footer class="text-center">

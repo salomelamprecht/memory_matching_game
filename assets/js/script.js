@@ -7,17 +7,18 @@ function getJoke() {
      }); 
 }
 
+// get button that opens the jokes
 const jokesBtn = document
   .getElementById('jokesBtn')
   .addEventListener('click', getJoke);
 
+// write function that is called when fetching the api data
 function randomJoke(jokeData) {
-  console.log(jokeData);
   let jokesDiv = document.getElementById('jokesDiv');
   if (jokeData.type === "single") {
-    jokesDiv.innerHTML = `<h2>${jokeData.joke}</h2>`;
+    jokesDiv.innerHTML = `<h3 class="modal-title">${jokeData.joke}</h3>`;
   } else {
-    jokesDiv.innerHTML = `<h2>${jokeData.setup}</h2>
-        <h3>${jokeData.delivery}</h3>`;
+    jokesDiv.innerHTML = `<h3>${jokeData.setup}</h3>
+        <h4>${jokeData.delivery}</h4>`;
   }
 }
