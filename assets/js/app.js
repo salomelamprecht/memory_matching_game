@@ -2,23 +2,23 @@ const grid = $('.grid').hide();
 const counters = $('.counters').hide();
 const gameFunctions = $('.game-functions').hide();
 const levels = $('.difficulty').hide();
-let score = document.querySelector('#score');
 let movesText = document.querySelector('.moves');
 let moves = 0;
-let second = 0, minute = 0;
+let second = 0,
+  minute = 0;
 let timer = document.querySelector('.timer');
 let interval;
 
-// create global variable for chosen theme and difficulty array 
+// create global variable for chosen theme and difficulty array
 let cardsArrayChosen = [];
 
-// Arrays 
+// Arrays
 cardsSelected = [];
 cardsSelectedId = [];
 cardsMatched = [];
 
-// create theme arrays easy to hard 
-// princess theme 
+// create theme arrays easy to hard
+// princess theme
 const princessCardsArrayEasy = [
   {
     name: 'princess1',
@@ -147,7 +147,7 @@ const princessCardsArrayHard = [
     img: 'assets/img/princesses/cinderella-shoe.png',
   },
 ];
-// mining theme 
+// mining theme
 const miningCardsArrayEasy = [
   {
     name: 'axe',
@@ -318,7 +318,7 @@ const alphabetNumberCardsArrayEasy = [
     name: 'letterE',
     img: 'assets/img/alphabet_numbers/e.png',
   },
-]
+];
 const alphabetNumberCardsArrayMedium = [
   ...alphabetNumberCardsArrayEasy,
   {
@@ -340,14 +340,16 @@ const alphabetNumberCardsArrayMedium = [
   {
     name: 'letterA',
     img: 'assets/img/alphabet_numbers/a.png',
-  },{
+  },
+  {
     name: 'letterA',
     img: 'assets/img/alphabet_numbers/a.png',
   },
   {
     name: 'letterZ',
     img: 'assets/img/alphabet_numbers/z.png',
-  },{
+  },
+  {
     name: 'letterZ',
     img: 'assets/img/alphabet_numbers/z.png',
   },
@@ -359,7 +361,7 @@ const alphabetNumberCardsArrayMedium = [
     name: 'number2',
     img: 'assets/img/alphabet_numbers/2.png',
   },
-]
+];
 const alphabetNumberCardsArrayHard = [
   ...alphabetNumberCardsArrayMedium,
   {
@@ -402,7 +404,7 @@ const alphabetNumberCardsArrayHard = [
     name: 'number0',
     img: 'assets/img/alphabet_numbers/0.png',
   },
-]
+];
 // shapes theme
 const shapesCardsArrayEasy = [
   {
@@ -445,7 +447,7 @@ const shapesCardsArrayEasy = [
     name: 'square',
     img: 'assets/img/shapes/square.png',
   },
-]
+];
 const shapesCardsArrayMedium = [
   ...shapesCardsArrayEasy,
   {
@@ -488,7 +490,7 @@ const shapesCardsArrayMedium = [
     name: 'tetrahedron',
     img: 'assets/img/shapes/tetrahedron.png',
   },
-]
+];
 const shapesCardsArrayHigh = [
   ...shapesCardsArrayMedium,
   {
@@ -531,7 +533,7 @@ const shapesCardsArrayHigh = [
     name: 'sphere',
     img: 'assets/img/shapes/sphere.png',
   },
-]
+];
 // wireframes theme
 const wireframesCardsArrayEasy = [
   {
@@ -574,7 +576,7 @@ const wireframesCardsArrayEasy = [
     name: 'bullet_form',
     img: 'assets/img/wireframes/bullet-form.png',
   },
-]
+];
 const wireframesCardsArrayMedium = [
   ...wireframesCardsArrayEasy,
   {
@@ -617,7 +619,7 @@ const wireframesCardsArrayMedium = [
     name: 'index',
     img: 'assets/img/wireframes/index.png',
   },
-]
+];
 const wireframesCardsArrayHard = [
   ...wireframesCardsArrayMedium,
   {
@@ -660,9 +662,9 @@ const wireframesCardsArrayHard = [
     name: 'sections',
     img: 'assets/img/wireframes/sections.png',
   },
-]
+];
 
-// timer 
+// timer
 function startTime() {
   interval = setInterval(function () {
     timer.innerHTML = `${minute} mins ${second} secs`;
@@ -675,7 +677,7 @@ function startTime() {
 }
 
 // ADD A STOP FUNCTION TO PERHAPS REWORK STARTTIME TO DO BOTH
-// show hide html theme difficulty and call gameBoard() 
+// show hide html theme difficulty and call gameBoard()
 let choosePrincesstheme = function () {
   $('.easy').click(function () {
     gameSetup();
@@ -710,24 +712,24 @@ let chooseMiningTheme = function () {
     gameBoard();
   });
 };
-let chooseAlphabetNumberTheme = function() {
-    $('.easy').click(function () {
-      gameSetup();
-      cardsArrayChosen = alphabetNumberCardsArrayEasy;
-      gameBoard();
-    });
-    $('.medium').click(function () {
-      gameSetup();
-      cardsArrayChosen = alphabetNumberCardsArrayMedium;
-      gameBoard();
-    });
-    $('.hard').click(function () {
-      gameSetup();
-      cardsArrayChosen = alphabetNumberCardsArrayHard;
-      gameBoard();
-    });
-}
-let chooseShapesTheme = function() {
+let chooseAlphabetNumberTheme = function () {
+  $('.easy').click(function () {
+    gameSetup();
+    cardsArrayChosen = alphabetNumberCardsArrayEasy;
+    gameBoard();
+  });
+  $('.medium').click(function () {
+    gameSetup();
+    cardsArrayChosen = alphabetNumberCardsArrayMedium;
+    gameBoard();
+  });
+  $('.hard').click(function () {
+    gameSetup();
+    cardsArrayChosen = alphabetNumberCardsArrayHard;
+    gameBoard();
+  });
+};
+let chooseShapesTheme = function () {
   $('.easy').click(function () {
     gameSetup();
     cardsArrayChosen = shapesCardsArrayEasy;
@@ -743,8 +745,8 @@ let chooseShapesTheme = function() {
     cardsArrayChosen = shapesCardsArrayHigh;
     gameBoard();
   });
-}
-let chooseWireFramesTheme = function() {
+};
+let chooseWireFramesTheme = function () {
   $('.easy').click(function () {
     gameSetup();
     cardsArrayChosen = wireframesCardsArrayEasy;
@@ -760,9 +762,9 @@ let chooseWireFramesTheme = function() {
     cardsArrayChosen = wireframesCardsArrayHard;
     gameBoard();
   });
-}
+};
 
-// choose theme 
+// choose theme
 $(function chooseTheme() {
   $('.princesses').click(function () {
     $(levels).show();
@@ -791,16 +793,16 @@ $(function chooseTheme() {
   });
 });
 
-// show hide levels/difficulty when game is setup 
+// show hide levels/difficulty when game is setup
 function toggleOn() {
   $(levels).hide();
   $(grid).show();
   $(counters).show();
   $(gameFunctions).show();
 }
-// once game is underway either restart or quit can be clicked 
+// once game is underway either restart or quit can be clicked
 function toggleOff() {
-  $(".quit").click(function () {
+  $('.quit').click(function () {
     window.location.href = 'index.html';
     $('.theme').show();
     $(grid).hide();
@@ -813,16 +815,16 @@ function toggleOff() {
   clearInterval(timer);
 }
 
-// create gamesetup function 
+// create gamesetup function
 let gameSetup = function () {
   toggleOn();
   startTime();
   toggleOff();
 };
 
-// create gameboard 
+// create gameboard
 function gameBoard() {
-  // randomise the cards 
+  // randomise the cards
   cardsArrayChosen.sort(() => 0.5 - Math.random());
   for (let i = 0; i < cardsArrayChosen.length; i++) {
     let card = document.createElement('img');
@@ -833,46 +835,107 @@ function gameBoard() {
   }
 }
 
-// check if the cards selected were a match 
+// check if the cards selected were a match
 function checkIfMatch() {
   let cards = document.querySelectorAll('img');
   const firstCardId = cardsSelectedId[0];
   const secondCardId = cardsSelectedId[1];
-  if (
-    cardsSelected[0] === cardsSelected[1] &&
-    firstCardId !== secondCardId) {
-    cards[firstCardId].setAttribute('src', 'assets/img/blank.png'); 
+  if (cardsSelected[0] === cardsSelected[1] && firstCardId !== secondCardId) {
+    cards[firstCardId].setAttribute('src', 'assets/img/blank.png');
     cards[secondCardId].setAttribute('src', 'assets/img/blank.png');
-    cards[firstCardId].setAttribute("class", "transparentImage");
-    cards[secondCardId].setAttribute("class", "transparentImage");
+    cards[firstCardId].setAttribute('class', 'transparentImage');
+    cards[secondCardId].setAttribute('class', 'transparentImage');
     cardsMatched.push(cardsSelected);
+    scoreCalc();
   } else {
     cards[firstCardId].setAttribute('src', 'assets/img/squarelightgrey.png');
     cards[secondCardId].setAttribute('src', 'assets/img/squarelightgrey.png');
   }
   cardsSelected = [];
   cardsSelectedId = [];
-  score.textContent = cardsMatched.length;
   if (cardsMatched.length === cardsArrayChosen.length / 2) {
-    alert("Congratulations! You have won.  Why not try another level or get a joke!");
-    document.location.reload();
-  clearInterval();
-}
-moves++;
-movesText.textContent = `${moves} move(s)`;
+    clearInterval();
+    window.location.reload();
+  }
+  moves++;
+  movesText.textContent = `${moves} move(s)`;
 }
 
-// flip cards over when clicked 
+// flip cards over when clicked
 function flipcard() {
   let cardId = this.getAttribute('data-id');
-  // push cards selected into the emtpy array cardsSelected 
+  // push cards selected into the emtpy array cardsSelected
   cardsSelected.push(cardsArrayChosen[cardId].name);
   cardsSelectedId.push(cardId);
-  // set the attributes of the cards selected to img in the princess cards array 
+  // set the attributes of the cards selected to img in the princess cards array
   this.setAttribute('src', cardsArrayChosen[cardId].img);
-  // if two cards are selected then check for a match 
+  // if two cards are selected then check for a match
   if (cardsSelected.length === 2) {
-    // set a timeout so that there is time to check for a match before user can select more cards 
+    // set a timeout so that there is time to check for a match before user can select more cards
     setTimeout(checkIfMatch, 500);
+  }
+}
+
+// create score calculation function to keep track of scores
+function scoreCalc() {
+  // easy levels
+  if (
+    cardsArrayChosen.length === 10 &&
+    cardsArrayChosen.length === cardsMatched.length * 2
+  ) {
+    if (moves <= 10) {
+      alert(
+        `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${second} secs.`
+      );
+    }
+    if (moves > 10 && moves <= 15) {
+      alert(
+        `That was great, well done! It took you ${moves} moves, ${minute} mins and ${second} secs.`
+      );
+    } else if (moves > 15) {
+      alert(
+        `You're doing well, but keep on practicing! It took you ${moves} moves, ${minute} mins and ${second} secs.`
+      );
+    }
+  } 
+  // medium levels
+  if (
+    cardsArrayChosen.length === 20 &&
+    cardsArrayChosen.length === cardsMatched.length * 2
+  ) {
+    if (moves <= 20) {
+      alert(
+        `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${second} secs.`
+      );
+    }
+    if (moves > 20 && moves <= 30) {
+      alert(
+        `That was great, well done! It took you ${moves} moves, ${minute} mins and ${second} secs.`
+      );
+    } else if (moves > 30) {
+      alert(
+        `You're doing well, but keep on practicing! It took you ${moves} moves, ${minute} mins and ${second} secs.`
+      );
+    }
+  }
+  // hard levels
+  if (
+    cardsArrayChosen.length === 30 &&
+    cardsArrayChosen.length === cardsMatched.length * 2
+  ) {
+    if (moves <= 30) {
+      alert(
+        `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${second} secs.`
+      );
+    }
+    if (moves > 30 && moves <= 45) {
+      alert(
+        `That was great, well done! It took you ${moves} moves, ${minute} mins and ${second} secs.`
+      );
+    } else if (moves > 45) {
+      alert(
+        `You're doing well, but keep on practicing! It took you ${moves} moves, ${minute} mins and ${second} secs.`
+      );
+    }
   }
 }
