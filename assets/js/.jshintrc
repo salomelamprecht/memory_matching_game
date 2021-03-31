@@ -1,0 +1,4 @@
+// stop jshint error when using const; let; spread operator
+{
+  "esversion": 6
+}

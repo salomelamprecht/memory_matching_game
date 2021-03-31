@@ -54,10 +54,11 @@
     <section>
       <h1 class="text-center">Memory Matching Game</h1>
       <div class="container">
+        <!-- Instructions -->
         <div>
           <p class="text-center"><strong>Instructions</strong></p>
           <p class="text-center">
-            Select your required theme and click on Start Game. Once the game
+            Select your required theme and level to start the game.  Once the game
             has started pick two cards, if the cards match, pick another two
             cards until you have matched all the cards. If your cards do not
             match, continue selecting cards until they match. If you would like
@@ -66,6 +67,7 @@
           </p>
           <p class="text-center">Enjoy your game!</p>
         </div>
+        <!-- Theme Options -->
         <div class="text-center theme">
           <button class="btn btn-danger princesses">Princesses</button>
           <button class="btn btn-warning mining">Mining</button>
@@ -77,6 +79,7 @@
         </div>
       </div>
     </section>
+    <!-- Difficulty Levels -->
     <section class="difficulty">
       <div class="container">
         <div class="text-center">
@@ -96,9 +99,14 @@
       </div>
     </section>
     <section>
+      <!-- Game Board -->
       <div class="container">
         <div class="grid"></div>
       </div>
+      <div class="text-center">        
+        <button class="btn btn-secondary" onClick="parent.open('highscores.html')">High Scores</button> 
+      </div>
+      <!-- Jokes -->
       <div class="text-center jokeSection">
         <div>
           Want to hear a joke instead? <i class="far fa-hand-point-down"></i>
@@ -146,6 +154,13 @@
       </div>
     </section>
 
+    <footer class="text-center">
+      <span
+        >Created by Salome Lamprecht. For any comments or suggestions, please
+        <a href="mailto:salomelamprecht@gmail.com">click here</a>.</span
+      >
+    </footer>
+
     <!-- add jQuery cdn -->
     <script
       src="https://code.jquery.com/jquery-3.5.1.js"
@@ -170,15 +185,8 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- load app.js -->
+    <!-- load script app and calc.js -->
     <script type="text/javascript" src="assets/js/app.js" defer></script>
     <script type="text/javascript" src="assets/js/script.js" defer></script>
   </body>
-
-  <footer class="text-center">
-    <span
-      >Created by Salome Lamprecht. For any comments or suggestions, please
-      <a href="mailto:salomelamprecht@gmail.com">click here</a>.</span
-    >
-  </footer>
 </html>

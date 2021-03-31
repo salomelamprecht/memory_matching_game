@@ -4,6 +4,7 @@ const gameFunctions = $('.game-functions').hide();
 const levels = $('.difficulty').hide();
 let movesText = document.querySelector('.moves');
 let moves = 0;
+let score = 0;
 let second = 0,
   minute = 0;
 let timer = document.querySelector('.timer');
@@ -809,9 +810,6 @@ function toggleOff() {
     $(counters).hide();
     $(gameFunctions).hide();
   });
-  /* $(".restart").click(function() {
-  chosenTheme();
-  }); */
   clearInterval(timer);
 }
 
@@ -823,7 +821,7 @@ let gameSetup = function () {
 };
 
 // create gameboard
-function gameBoard() {
+function gameBoard() { 
   // randomise the cards
   cardsArrayChosen.sort(() => 0.5 - Math.random());
   for (let i = 0; i < cardsArrayChosen.length; i++) {
@@ -871,71 +869,7 @@ function flipcard() {
   this.setAttribute('src', cardsArrayChosen[cardId].img);
   // if two cards are selected then check for a match
   if (cardsSelected.length === 2) {
-    // set a timeout so that there is time to check for a match before user can select more cards
+    // set a timeout so that there is time for checkIfMatch function to run
     setTimeout(checkIfMatch, 500);
-  }
-}
-
-// create score calculation function to keep track of scores
-function scoreCalc() {
-  // easy levels
-  if (
-    cardsArrayChosen.length === 10 &&
-    cardsArrayChosen.length === cardsMatched.length * 2
-  ) {
-    if (moves <= 10) {
-      alert(
-        `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${second} secs.`
-      );
-    }
-    if (moves > 10 && moves <= 15) {
-      alert(
-        `That was great, well done! It took you ${moves} moves, ${minute} mins and ${second} secs.`
-      );
-    } else if (moves > 15) {
-      alert(
-        `You're doing well, but keep on practicing! It took you ${moves} moves, ${minute} mins and ${second} secs.`
-      );
-    }
   } 
-  // medium levels
-  if (
-    cardsArrayChosen.length === 20 &&
-    cardsArrayChosen.length === cardsMatched.length * 2
-  ) {
-    if (moves <= 20) {
-      alert(
-        `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${second} secs.`
-      );
-    }
-    if (moves > 20 && moves <= 30) {
-      alert(
-        `That was great, well done! It took you ${moves} moves, ${minute} mins and ${second} secs.`
-      );
-    } else if (moves > 30) {
-      alert(
-        `You're doing well, but keep on practicing! It took you ${moves} moves, ${minute} mins and ${second} secs.`
-      );
-    }
-  }
-  // hard levels
-  if (
-    cardsArrayChosen.length === 30 &&
-    cardsArrayChosen.length === cardsMatched.length * 2
-  ) {
-    if (moves <= 30) {
-      alert(
-        `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${second} secs.`
-      );
-    }
-    if (moves > 30 && moves <= 45) {
-      alert(
-        `That was great, well done! It took you ${moves} moves, ${minute} mins and ${second} secs.`
-      );
-    } else if (moves > 45) {
-      alert(
-        `You're doing well, but keep on practicing! It took you ${moves} moves, ${minute} mins and ${second} secs.`
-      );
-    }
-  }
 }
