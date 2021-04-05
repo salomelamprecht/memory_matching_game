@@ -2,6 +2,7 @@ const grid = $('.grid').hide();
 const counters = $('.counters').hide();
 const gameFunctions = $('.game-functions').hide();
 const levels = $('.difficulty').hide();
+let introduction = $('#introduction');
 let movesText = document.querySelector('.moves');
 let moves = 0;
 let score = 0;
@@ -797,6 +798,7 @@ $(function chooseTheme() {
 // show hide levels/difficulty when game is setup
 function toggleOn() {
   $(levels).hide();
+  $(introduction).hide();
   $(grid).show();
   $(counters).show();
   $(gameFunctions).show();
@@ -806,6 +808,7 @@ function toggleOff() {
   $('.quit').click(function () {
     window.location.href = 'index.html';
     $('.theme').show();
+    $(introduction).show();
     $(grid).hide();
     $(counters).hide();
     $(gameFunctions).hide();
@@ -844,7 +847,6 @@ function checkIfMatch() {
     cards[firstCardId].setAttribute('class', 'transparentImage');
     cards[secondCardId].setAttribute('class', 'transparentImage');
     cardsMatched.push(cardsSelected);
-    scoreCalc();
   } else {
     cards[firstCardId].setAttribute('src', 'assets/img/squarelightgrey.png');
     cards[secondCardId].setAttribute('src', 'assets/img/squarelightgrey.png');
