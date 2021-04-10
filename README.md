@@ -5,8 +5,6 @@ It has been shown that matching games can also improve and support cognitive fun
 [![GitHub issues](https://img.shields.io/github/issues/salomelamprecht/memory_matching_game?style=plastic)](https://github.com/salomelamprecht/memory_matching_game/issues) 
 [![GitHub forks](https://img.shields.io/github/forks/salomelamprecht/memory_matching_game)](https://github.com/salomelamprecht/memory_matching_game/network)
 
-/assets/img/readme/game_image.png
-
 ## User Stories
 Some user stories that have been identified are:
 1.	As a user I want to be able to navigate the game easily.
@@ -86,23 +84,35 @@ No errors found.
 ## Deployment
 
 ## Credits 
-Thank you to the designers of the icons used in the themes.
+### Useful articles and game how to guides used:
 
-### Mining:
+#### Articles: 
+* https://michael-karen.medium.com/how-to-save-high-scores-in-local-storage-7860baca9d68
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript 
 
-Icons made by Good Ware https://www.flaticon.com/authors/good-ware" from https://www.flaticon.com/ www.flaticon.com
+#### Games:
+* https://www.freecodecamp.org/news/vanilla-javascript-tutorial-build-a-memory-game-in-30-minutes-e542c4447eae/ 
+* https://github.com/sandraisrael/Memory-Game-fend/blob/master/js/app.js
+* https://www.youtube.com/watch?v=tjyDOHzKN0w
+* https://www.youtube.com/watch?v=4zx5bM2OcvA
 
-### Princesses: 
-Icons made by Smashicons https://www.flaticon.com/authors/smashicons from https://www.flaticon.com/
+### Thank you to the designers of the icons used in the themes:
+#### Mining:
+<img src="/assets/img/mining/excavator.png" alt="Excavator" width="25" height="25"/> Icons made by Good Ware https://www.flaticon.com/authors/good-ware" from https://www.flaticon.com/ www.flaticon.com
 
-### Shapes
-Icons made by Pixel Perfect https://www.flaticon.com/authors/pixel-perfect from https://www.flaticon.com/
+#### Princesses: 
+<img src="/assets/img/princesses/princess1.png" alt="Princess" width="25" height="25"/> Icons made by Smashicons https://www.flaticon.com/authors/smashicons from https://www.flaticon.com/
 
-### Letters & Numbers
-Icons made by Freepik https://www.freepik.com from https://www.flaticon.com/
+#### Shapes
+<img src="/assets/img/shapes/cube.png" alt="Cube" width="25" height="25"/> Icons made by Pixel Perfect https://www.flaticon.com/authors/pixel-perfect from https://www.flaticon.com/
 
-### Wireframes
-Icons made by Pixel Perfect https://www.flaticon.com/authors/pixel-perfect from https://www.flaticon.com/
+#### Letters & Numbers
+<img src="/assets/img/alphabet_numbers/s.png" alt="Letter S" width="25" height="25"/> Icons made by Freepik https://www.freepik.com from https://www.flaticon.com/
 
-### Jokes API
+#### Wireframes
+<img src="/assets/img/wireframes/body.png" alt="Wireframe of the body of an article" width="25" height="25"/> Icons made by Pixel Perfect https://www.flaticon.com/authors/pixel-perfect from https://www.flaticon.com/
+
+### Thanks to Jokes API for the jokes:
+#### Jokes API
 https://sv443.net/jokeapi/v2/
+<img src="/assets/img/joke.png" alt="A programming joke"/>

@@ -5,11 +5,12 @@ const levels = $('.difficulty').hide();
 let introduction = $('#introduction');
 let movesText = document.querySelector('.moves');
 let moves = 0;
-let score = 0;
+// let score = 0;
 let second = 0,
   minute = 0;
 let timer = document.querySelector('.timer');
 let interval;
+let yourScore = document.querySelector('.yourScore');
 
 // create global variable for chosen theme and difficulty array
 let cardsArrayChosen = [];
@@ -678,7 +679,6 @@ function startTime() {
   }, 1000);
 }
 
-// ADD A STOP FUNCTION TO PERHAPS REWORK STARTTIME TO DO BOTH
 // show hide html theme difficulty and call gameBoard()
 let choosePrincesstheme = function () {
   $('.easy').click(function () {
@@ -824,7 +824,7 @@ let gameSetup = function () {
 };
 
 // create gameboard
-function gameBoard() { 
+function gameBoard() {
   // randomise the cards
   cardsArrayChosen.sort(() => 0.5 - Math.random());
   for (let i = 0; i < cardsArrayChosen.length; i++) {
@@ -854,11 +854,13 @@ function checkIfMatch() {
   cardsSelected = [];
   cardsSelectedId = [];
   if (cardsMatched.length === cardsArrayChosen.length / 2) {
-    clearInterval();
-    window.location.reload();
+    scoreCalc();
+    clearInterval(interval); // stop time from carrying on
+    //window.location.reload();
   }
   moves++;
   movesText.textContent = `${moves} move(s)`;
+
 }
 
 // flip cards over when clicked
@@ -873,5 +875,93 @@ function flipcard() {
   if (cardsSelected.length === 2) {
     // set a timeout so that there is time for checkIfMatch function to run
     setTimeout(checkIfMatch, 500);
-  } 
+  }
 }
+
+// create score calculation function to keep track of scores
+function scoreCalc() {
+  // easy levels
+  if (
+    cardsArrayChosen.length === 10 &&
+    cardsArrayChosen.length === cardsMatched.length * 2
+  ) {
+    let minimumMoves = 5;
+    let minimumTime = 10;
+    let seconds = minute * 60 + second;
+    let score = Math.round(
+      (minimumTime / seconds) * (minimumMoves / moves) * 100
+    );
+    if (moves <= 10) {
+      alert(
+        `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${second-1} secs. Your score is ${score} out of a possible 100.`
+        ); 
+
+        console.log(score);
+        yourScore.innerHTML = `Your Score: ${score}`;
+    } 
+    if (moves > 10 && moves <= 15) {
+      alert(
+        `That was great, well done! It took you ${moves} moves, ${minute} mins and ${second-1} secs. Your score is ${score} out of a possible 100.`
+      );
+    } else if (moves > 15) {
+      alert(
+        `You're doing well, but keep on practicing! It took you ${moves} moves, ${minute} mins and ${second-1} secs. Your score is ${score} out of a possible 100.`
+      );
+    }
+  } 
+
+  // medium levels
+  if (
+    cardsArrayChosen.length === 20 &&
+    cardsArrayChosen.length === cardsMatched.length * 2
+  ) {
+    let minimumMoves = 10;
+    let minimumTime = 45;
+    let seconds = minute * 60 + second;
+    let score = Math.round(
+      (minimumTime / seconds) * (minimumMoves / moves) * 100
+    );
+    if (moves <= 20) {
+      alert(
+        `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${second-1} secs. Your score is ${score} out of a possible 100.`
+      );
+    }
+    if (moves > 20 && moves <= 30) {
+      alert(
+        `That was great, well done! It took you ${moves} moves, ${minute} mins and ${second-1} secs. Your score is ${score} out of a possible 100.`
+      );
+    } else if (moves > 30) {
+      alert(
+        `You're doing well, but keep on practicing! It took you ${moves} moves, ${minute} mins and ${second-1} secs. Your score is ${score} out of a possible 100.`
+      );
+    }
+  }
+
+  // hard levels
+  if (
+    cardsArrayChosen.length === 30 &&
+    cardsArrayChosen.length === cardsMatched.length * 2
+  ) {
+    let minimumMoves = 20;
+    let minimumTime = 50;
+    let seconds = minute * 60 + second;
+    let score = Math.round(
+      (minimumTime / seconds) * (minimumMoves / moves) * 100
+    );
+    if (moves <= 30) {
+      alert(
+        `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${second-1} secs. Your score is ${score} out of a possible 100.`
+      );
+    }
+    if (moves > 30 && moves <= 45) {
+      alert(
+        `That was great, well done! It took you ${moves} moves, ${minute} mins and ${second-1} secs. Your score is ${score} out of a possible 100.`
+      );
+    } else if (moves > 45) {
+      alert(
+        `You're doing well, but keep on practicing! It took you ${moves} moves, ${minute} mins and ${second-1} secs. Your score is ${score} out of a possible 100.`
+      );
+    }
+  }
+} 
+
