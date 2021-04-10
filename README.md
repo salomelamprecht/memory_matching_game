@@ -89,8 +89,7 @@ No errors found.
 Thank you to the designers of the icons used in the themes.
 
 ### Mining:
-
-Icons made by Good Ware https://www.flaticon.com/authors/good-ware" from https://www.flaticon.com/ www.flaticon.com
+<img src="/assets/img/mining/excavator.png" alt="My cool logo"/> Icons made by Good Ware https://www.flaticon.com/authors/good-ware" from https://www.flaticon.com/ www.flaticon.com
 
 ### Princesses: 
 Icons made by Smashicons https://www.flaticon.com/authors/smashicons from https://www.flaticon.com/
