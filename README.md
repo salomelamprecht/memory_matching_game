@@ -5,7 +5,7 @@ It has been shown that matching games can also improve and support cognitive fun
 [![GitHub issues](https://img.shields.io/github/issues/salomelamprecht/memory_matching_game?style=plastic)](https://github.com/salomelamprecht/memory_matching_game/issues) 
 [![GitHub forks](https://img.shields.io/github/forks/salomelamprecht/memory_matching_game)](https://github.com/salomelamprecht/memory_matching_game/network)
 
-<img src="/assets/img/readme/gameimage.png" alt="Game Image"/>
+<img src="\assets\img\readme\gameimage.png" alt="Game Image"/> 
 
 ## User Stories
 Some user stories that have been identified are:
