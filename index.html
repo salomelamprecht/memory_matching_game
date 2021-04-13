@@ -147,6 +147,24 @@
             <span class="moves">0 Move(s)</span>
             <span class="timer">0 time elapsed</span>
           </div>
+          <div class="scoring">
+            <span class="yourScore">Your Score: </span>
+          </div>
+          <form class="nameEntry">
+            <input
+              type="text"
+              name="username"
+              id="username"
+              placeholder="player name"
+            />
+            <button
+              type="submit"
+              class="btn btn-success"
+              id="saveScoreBtn"
+            >
+              Save
+            </button>
+          </form>
         </div>
       </div>
     </div>
@@ -181,6 +199,9 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Add Sweet Alert CDN -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <!-- load script app and calc.js -->
     <script src="assets/js/app.js" defer></script>

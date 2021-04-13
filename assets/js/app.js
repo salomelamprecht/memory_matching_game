@@ -5,11 +5,12 @@ const levels = $('.difficulty').hide();
 let introduction = $('#introduction');
 let movesText = document.querySelector('.moves');
 let moves = 0;
-let score = 0;
+// let score = 0;
 let second = 0,
   minute = 0;
 let timer = document.querySelector('.timer');
 let interval;
+let yourScore = document.querySelector('.yourScore');
 
 // create global variable for chosen theme and difficulty array
 let cardsArrayChosen = [];
@@ -678,7 +679,6 @@ function startTime() {
   }, 1000);
 }
 
-// ADD A STOP FUNCTION TO PERHAPS REWORK STARTTIME TO DO BOTH
 // show hide html theme difficulty and call gameBoard()
 let choosePrincesstheme = function () {
   $('.easy').click(function () {
@@ -824,7 +824,7 @@ let gameSetup = function () {
 };
 
 // create gameboard
-function gameBoard() { 
+function gameBoard() {
   // randomise the cards
   cardsArrayChosen.sort(() => 0.5 - Math.random());
   for (let i = 0; i < cardsArrayChosen.length; i++) {
@@ -854,8 +854,9 @@ function checkIfMatch() {
   cardsSelected = [];
   cardsSelectedId = [];
   if (cardsMatched.length === cardsArrayChosen.length / 2) {
-    clearInterval();
-    window.location.reload();
+    scoreCalc();
+    clearInterval(interval); // stop time from carrying on
+    
   }
   moves++;
   movesText.textContent = `${moves} move(s)`;
@@ -873,5 +874,140 @@ function flipcard() {
   if (cardsSelected.length === 2) {
     // set a timeout so that there is time for checkIfMatch function to run
     setTimeout(checkIfMatch, 500);
-  } 
+  }
 }
+
+// SCORING
+// create score calculation function to keep track of scores
+function scoreCalc() {
+  nameEntry.show();
+  // easy levels
+  if (
+    cardsArrayChosen.length === 10 &&
+    cardsArrayChosen.length === cardsMatched.length * 2
+  ) {
+    let minimumMoves = 5;
+    let minimumTime = 10;
+    let seconds = minute * 60 + second;
+    let score = Math.round(
+      (minimumTime / seconds) * (minimumMoves / moves) * 100
+    );
+    if (moves <= 5) {
+      swal({text: `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${
+          second - 1
+        } secs. Your score is 100 out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
+      yourScore.innerHTML = `Your Score: ${score}`;
+      localStorage.setItem('lastScore', score);
+    }
+    if (moves > 5 && moves <= 10) {
+      swal({text: `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${
+          second - 1
+        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
+      yourScore.innerHTML = `Your Score: ${score}`;
+      localStorage.setItem('lastScore', score);
+    }
+    if (moves > 10 && moves <= 15) {
+      swal({text: `That was great, well done! It took you ${moves} moves, ${minute} mins and ${
+          second - 1
+        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
+    } else if (moves > 15) {
+      swal({text: `You're doing well, but keep on practicing! It took you ${moves} moves, ${minute} mins and ${
+          second - 1
+        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
+    }
+  }
+
+  // medium levels
+  if (
+    cardsArrayChosen.length === 20 &&
+    cardsArrayChosen.length === cardsMatched.length * 2
+  ) {
+    let minimumMoves = 10;
+    let minimumTime = 45;
+    let seconds = minute * 60 + second;
+    let score = Math.round(
+      (minimumTime / seconds) * (minimumMoves / moves) * 100
+    );
+    if (moves <= 10) {
+      swal({text: `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${
+          second - 1
+        } secs. Your score is 100 out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
+      yourScore.innerHTML = `Your Score: ${score}`;
+      localStorage.setItem('lastScore', score);
+    }
+    if (moves > 10 && moves <= 20) {
+      swal({text: `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${
+          second - 1
+        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
+    }
+    if (moves > 20 && moves <= 30) {
+      swal({text: `That was great, well done! It took you ${moves} moves, ${minute} mins and ${
+          second - 1
+        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
+    } else if (moves > 30) {
+      swal({text: `You're doing well, but keep on practicing! It took you ${moves} moves, ${minute} mins and ${
+          second - 1
+        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
+    }
+  }
+
+  // hard levels
+  if (
+    cardsArrayChosen.length === 30 &&
+    cardsArrayChosen.length === cardsMatched.length * 2
+  ) {
+    let minimumMoves = 20;
+    let minimumTime = 50;
+    let seconds = minute * 60 + second;
+    let score = Math.round(
+      (minimumTime / seconds) * (minimumMoves / moves) * 100
+    );
+    if (moves <= 20) {
+      swal({text: `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${
+          second - 1
+        } secs. Your score is 100 out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
+      yourScore.innerHTML = `Your Score: ${score}`;
+      localStorage.setItem('lastScore', score);
+    }
+    if (moves > 20 && moves <= 30) {
+      swal({text: `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${
+          second - 1
+        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
+    }
+    if (moves > 30 && moves <= 45) {
+      swal({text: `That was great, well done! It took you ${moves} moves, ${minute} mins and ${
+          second - 1
+        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
+    } else if (moves > 45) {
+      swal({text: `You're doing well, but keep on practicing! It took you ${moves} moves, ${minute} mins and ${
+          second - 1
+        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
+    }
+  }
+}
+
+// save scores to local storage
+const nameEntry = $('.nameEntry').hide();
+const saveScoreBtn = document.getElementById('saveScore');
+// if no high scores available then set the local storage to an empty array
+const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+// last score and username entered and store in local storage
+function saveHighScores() {
+  const lastScore = JSON.parse(localStorage.getItem('lastScore'));
+  const myScores = {
+    score: lastScore,
+    inputname: document.getElementById('username').value,
+  };
+  localStorage.setItem('name', username.value);
+  highScores.push(myScores);
+  // sort the high scores into highest scores first to a max of 10 scores
+  highScores.sort((a, b) => b.score - a.score);
+  highScores.splice(10);
+
+  localStorage.setItem('highScores', JSON.stringify(highScores));
+} 
+
+// add eventlistener to save the username entered and run the saveHighScore function 
+document
+  .getElementById('saveScoreBtn')
+  .addEventListener('click', saveHighScores);
