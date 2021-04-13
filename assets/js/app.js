@@ -877,6 +877,7 @@ function flipcard() {
   }
 }
 
+// SCORING
 // create score calculation function to keep track of scores
 function scoreCalc() {
   nameEntry.show();
@@ -891,27 +892,28 @@ function scoreCalc() {
     let score = Math.round(
       (minimumTime / seconds) * (minimumMoves / moves) * 100
     );
-    if (moves <= 10) {
-      alert(
-        `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${
+    if (moves <= 5) {
+      swal({text: `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${
           second - 1
-        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`
-      );
+        } secs. Your score is 100 out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
+      yourScore.innerHTML = `Your Score: ${score}`;
+      localStorage.setItem('lastScore', score);
+    }
+    if (moves > 5 && moves <= 10) {
+      swal({text: `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${
+          second - 1
+        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
       yourScore.innerHTML = `Your Score: ${score}`;
       localStorage.setItem('lastScore', score);
     }
     if (moves > 10 && moves <= 15) {
-      alert(
-        `That was great, well done! It took you ${moves} moves, ${minute} mins and ${
+      swal({text: `That was great, well done! It took you ${moves} moves, ${minute} mins and ${
           second - 1
-        } secs. Your score is ${score} out of a possible 100.`
-      );
+        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
     } else if (moves > 15) {
-      alert(
-        `You're doing well, but keep on practicing! It took you ${moves} moves, ${minute} mins and ${
+      swal({text: `You're doing well, but keep on practicing! It took you ${moves} moves, ${minute} mins and ${
           second - 1
-        } secs. Your score is ${score} out of a possible 100.`
-      );
+        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
     }
   }
 
@@ -926,25 +928,26 @@ function scoreCalc() {
     let score = Math.round(
       (minimumTime / seconds) * (minimumMoves / moves) * 100
     );
-    if (moves <= 20) {
-      alert(
-        `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${
+    if (moves <= 10) {
+      swal({text: `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${
           second - 1
-        } secs. Your score is ${score} out of a possible 100.`
-      );
+        } secs. Your score is 100 out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
+      yourScore.innerHTML = `Your Score: ${score}`;
+      localStorage.setItem('lastScore', score);
+    }
+    if (moves > 10 && moves <= 20) {
+      swal({text: `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${
+          second - 1
+        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
     }
     if (moves > 20 && moves <= 30) {
-      alert(
-        `That was great, well done! It took you ${moves} moves, ${minute} mins and ${
+      swal({text: `That was great, well done! It took you ${moves} moves, ${minute} mins and ${
           second - 1
-        } secs. Your score is ${score} out of a possible 100.`
-      );
+        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
     } else if (moves > 30) {
-      alert(
-        `You're doing well, but keep on practicing! It took you ${moves} moves, ${minute} mins and ${
+      swal({text: `You're doing well, but keep on practicing! It took you ${moves} moves, ${minute} mins and ${
           second - 1
-        } secs. Your score is ${score} out of a possible 100.`
-      );
+        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
     }
   }
 
@@ -959,25 +962,26 @@ function scoreCalc() {
     let score = Math.round(
       (minimumTime / seconds) * (minimumMoves / moves) * 100
     );
-    if (moves <= 30) {
-      alert(
-        `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${
+    if (moves <= 20) {
+      swal({text: `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${
           second - 1
-        } secs. Your score is ${score} out of a possible 100.`
-      );
+        } secs. Your score is 100 out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
+      yourScore.innerHTML = `Your Score: ${score}`;
+      localStorage.setItem('lastScore', score);
+    }
+    if (moves > 20 && moves <= 30) {
+      swal({text: `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${
+          second - 1
+        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
     }
     if (moves > 30 && moves <= 45) {
-      alert(
-        `That was great, well done! It took you ${moves} moves, ${minute} mins and ${
+      swal({text: `That was great, well done! It took you ${moves} moves, ${minute} mins and ${
           second - 1
-        } secs. Your score is ${score} out of a possible 100.`
-      );
+        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
     } else if (moves > 45) {
-      alert(
-        `You're doing well, but keep on practicing! It took you ${moves} moves, ${minute} mins and ${
+      swal({text: `You're doing well, but keep on practicing! It took you ${moves} moves, ${minute} mins and ${
           second - 1
-        } secs. Your score is ${score} out of a possible 100.`
-      );
+        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
     }
   }
 }
