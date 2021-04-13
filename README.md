@@ -110,9 +110,9 @@ No errors found.
 <img src="/assets/img/alphabet_numbers/s.png" alt="Letter S" width="25" height="25"/> Icons made by Freepik https://www.freepik.com from https://www.flaticon.com/
 
 #### Wireframes
-<img src="/assets/img/wireframes/body.png" alt="Wireframe of the body of an article" width="25" height="25"/> Icons made by Pixel Perfect https://www.flaticon.com/authors/pixel-perfect from https://www.flaticon.com/
+<img src="/assets/img/wireframes/bodyRM.png" alt="Wireframe of the body of an article" width="25" height="25"/> Icons made by Pixel Perfect https://www.flaticon.com/authors/pixel-perfect from https://www.flaticon.com/
 
 ### Thanks to Jokes API for the jokes:
 #### Jokes API
 https://sv443.net/jokeapi/v2/
-<img src="/assets/img/joke.png" alt="A programming joke"/>
+<img src="/assets/img/joke.png" alt="A programming joke" width="33vw" height="33vh"/>

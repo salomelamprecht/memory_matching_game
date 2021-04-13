@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Memory Matching Game</title>
+    <title>High Scores</title>
     <!-- Meta Tags -->
     <meta charset="utf-8" />
     <meta
@@ -53,10 +53,12 @@
         <h1>High Scores</h1>
         <div class="text-center">        
           <button class="btn btn-secondary" onClick="parent.open('index.html')">Home</button> 
-        </div>
-        <ul class="listOfScores">
           <p>List of high scores saved in local storage to go here</p>
-        </ul>
+        </div>
+        <div id="highscores" class="flex-center flex-column">
+          <ul id="highScoreList">
+          </ul>
+        </div>
       </div>
     </section>
     <footer class="text-center">
@@ -90,6 +92,6 @@
     ></script>
 
     <!-- load script app.js -->
-    <script type="text/javascript" src="assets/js/app.js" defer></script>
+    <script type="text/javascript" src="assets/js/highscores.js" defer></script>
   </body>
 </html>

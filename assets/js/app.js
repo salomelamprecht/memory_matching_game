@@ -856,11 +856,10 @@ function checkIfMatch() {
   if (cardsMatched.length === cardsArrayChosen.length / 2) {
     scoreCalc();
     clearInterval(interval); // stop time from carrying on
-    //window.location.reload();
+    
   }
   moves++;
   movesText.textContent = `${moves} move(s)`;
-
 }
 
 // flip cards over when clicked
@@ -880,6 +879,7 @@ function flipcard() {
 
 // create score calculation function to keep track of scores
 function scoreCalc() {
+  nameEntry.show();
   // easy levels
   if (
     cardsArrayChosen.length === 10 &&
@@ -893,22 +893,27 @@ function scoreCalc() {
     );
     if (moves <= 10) {
       alert(
-        `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${second-1} secs. Your score is ${score} out of a possible 100.`
-        ); 
-
-        console.log(score);
-        yourScore.innerHTML = `Your Score: ${score}`;
-    } 
+        `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${
+          second - 1
+        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`
+      );
+      yourScore.innerHTML = `Your Score: ${score}`;
+      localStorage.setItem('lastScore', score);
+    }
     if (moves > 10 && moves <= 15) {
       alert(
-        `That was great, well done! It took you ${moves} moves, ${minute} mins and ${second-1} secs. Your score is ${score} out of a possible 100.`
+        `That was great, well done! It took you ${moves} moves, ${minute} mins and ${
+          second - 1
+        } secs. Your score is ${score} out of a possible 100.`
       );
     } else if (moves > 15) {
       alert(
-        `You're doing well, but keep on practicing! It took you ${moves} moves, ${minute} mins and ${second-1} secs. Your score is ${score} out of a possible 100.`
+        `You're doing well, but keep on practicing! It took you ${moves} moves, ${minute} mins and ${
+          second - 1
+        } secs. Your score is ${score} out of a possible 100.`
       );
     }
-  } 
+  }
 
   // medium levels
   if (
@@ -923,16 +928,22 @@ function scoreCalc() {
     );
     if (moves <= 20) {
       alert(
-        `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${second-1} secs. Your score is ${score} out of a possible 100.`
+        `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${
+          second - 1
+        } secs. Your score is ${score} out of a possible 100.`
       );
     }
     if (moves > 20 && moves <= 30) {
       alert(
-        `That was great, well done! It took you ${moves} moves, ${minute} mins and ${second-1} secs. Your score is ${score} out of a possible 100.`
+        `That was great, well done! It took you ${moves} moves, ${minute} mins and ${
+          second - 1
+        } secs. Your score is ${score} out of a possible 100.`
       );
     } else if (moves > 30) {
       alert(
-        `You're doing well, but keep on practicing! It took you ${moves} moves, ${minute} mins and ${second-1} secs. Your score is ${score} out of a possible 100.`
+        `You're doing well, but keep on practicing! It took you ${moves} moves, ${minute} mins and ${
+          second - 1
+        } secs. Your score is ${score} out of a possible 100.`
       );
     }
   }
@@ -950,18 +961,49 @@ function scoreCalc() {
     );
     if (moves <= 30) {
       alert(
-        `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${second-1} secs. Your score is ${score} out of a possible 100.`
+        `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${
+          second - 1
+        } secs. Your score is ${score} out of a possible 100.`
       );
     }
     if (moves > 30 && moves <= 45) {
       alert(
-        `That was great, well done! It took you ${moves} moves, ${minute} mins and ${second-1} secs. Your score is ${score} out of a possible 100.`
+        `That was great, well done! It took you ${moves} moves, ${minute} mins and ${
+          second - 1
+        } secs. Your score is ${score} out of a possible 100.`
       );
     } else if (moves > 45) {
       alert(
-        `You're doing well, but keep on practicing! It took you ${moves} moves, ${minute} mins and ${second-1} secs. Your score is ${score} out of a possible 100.`
+        `You're doing well, but keep on practicing! It took you ${moves} moves, ${minute} mins and ${
+          second - 1
+        } secs. Your score is ${score} out of a possible 100.`
       );
     }
   }
+}
+
+// save scores to local storage
+const nameEntry = $('.nameEntry').hide();
+const saveScoreBtn = document.getElementById('saveScore');
+// if no high scores available then set the local storage to an empty array
+const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+// last score and username entered and store in local storage
+function saveHighScores() {
+  const lastScore = JSON.parse(localStorage.getItem('lastScore'));
+  const myScores = {
+    score: lastScore,
+    inputname: document.getElementById('username').value,
+  };
+  localStorage.setItem('name', username.value);
+  highScores.push(myScores);
+  // sort the high scores into highest scores first to a max of 10 scores
+  highScores.sort((a, b) => b.score - a.score);
+  highScores.splice(10);
+
+  localStorage.setItem('highScores', JSON.stringify(highScores));
 } 
 
+// add eventlistener to save the username entered and run the saveHighScore function 
+document
+  .getElementById('saveScoreBtn')
+  .addEventListener('click', saveHighScores);
