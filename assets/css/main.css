@@ -104,6 +104,29 @@ img {
   background-color: #f26419;
 }
 
+/* highscores css */
+#highscoresEasy {
+  color: greenyellow;
+  text-shadow: black 0px 0px 7px;
+  text-rendering: optimizeLegibility;
+}
+
+#highscoresMedium {
+  color: orange;
+  text-shadow: black 0px 0px 7px;
+  text-rendering: optimizeLegibility;
+}
+
+#highscoresHard {
+  color: #ff0000;
+  text-shadow: black 0px 0px 7px;
+  text-rendering: optimizeLegibility;
+}
+
+li {
+  list-style-type: none;
+}
+
 #jokesDiv h3 {
   font-family: 'Patrick Hand', cursive;
 }
