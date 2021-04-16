@@ -25,7 +25,7 @@ Please see separate UX folder for planes and wireframes.
 ## Features 
 The user is able to choose form a variety of options as well as three difficulty levels and will is presented with a score so that they can keep track of their progress.
 
-## Technologies Used
+## Frameworks & Technologies Used
 * HTML5
 * CSS3
 * Bootstrap4
@@ -34,7 +34,10 @@ The user is able to choose form a variety of options as well as three difficulty
 * GoogleFonts
 * FontAwesome
 * Git for version control
-* GitHub for deployment
+* <img src="/assets/img/readme/GitHub.png" alt="GitHub logo" width="25" height="25"/> GitHub for deployment
+
+## IDE used
+VS Code
 
 ## Code Snippet
 Choosing themes snippet: user chooses Princesses theme.
@@ -70,6 +73,9 @@ I used console.log() throughout to nesure the game was functioning the way I nee
 * Timer currently starts before first click and does not stop on last click.
 
 I uploaded to GitHub and then also tested the website using tablets and mobiles.  Most responsive testing was completed in Chrome.
+
+## Version Control
+I used git for version control.  Created a working-branch for all added changes before committing to the master branch to ensure new additions to the game did not impact on the working game code in the master branch.  Used push and pull requests to update master branch with successful additions.
 
 ### *Online Validators*
 #### *HTML Validator* (https://validator.w3.org/)
