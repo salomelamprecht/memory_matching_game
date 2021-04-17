@@ -53,21 +53,10 @@
   <body>
     <section>
       <h1 class="text-center">Memory Matching Game</h1>
-      <div class="container">
-        <!-- Instructions -->
-        <div id="introduction">
-          <p class="text-center"><strong>Instructions</strong></p>
-          <p class="text-center">
-            Select your required theme and level to start the game.  Once the game
-            has started pick two cards, if the cards match, pick another two
-            cards until you have matched all the cards. If your cards do not
-            match, continue selecting cards until they match. If you would like
-            to quit the game, select quit.
-          </p>
-          <p class="text-center">Enjoy your game!</p>
-        </div>
+      <div class="container text-center">
         <!-- Theme Options -->
         <div class="text-center theme">
+          <h2>Select your theme below.</h2>
           <button class="btn btn-danger princesses">Princesses</button>
           <button class="btn btn-warning mining">Mining</button>
           <button class="btn btn-success alphabetNumber">
@@ -77,24 +66,27 @@
           <button class="btn btn-light wireframes">Wireframes</button>
         </div>
       </div>
+      <div class="container text-center" id="play-instructions">
+          <p>Your timer has started!
+          <br>Pick 2 cards.  If your 2 cards match, pick another 2 cards!
+          <br>Continue selecting cards until you have matched them all!
+          <br>Have FUN!</p>
+      </div>
+
     </section>
     <!-- Difficulty Levels -->
     <div class="difficulty">
-      <div class="container">
-        <div class="text-center">
+      <div class="container text-center">
           <h2 class="text-center">Choose the game difficulty.</h2>
           <button class="btn btn-success easy">Easy</button>
           <button class="btn btn-warning medium">Medium</button>
           <button class="btn btn-danger hard">Hard</button>
-        </div>
       </div>
     </div>
-    <div class="game-functions">
-      <div class="container">
+    <div class="container game-functions">
         <div class="text-center">
           <button class="btn btn-warning quit">Quit</button>
         </div>
-      </div>
     </div>
     <div>
       <!-- Game Board -->
@@ -106,11 +98,10 @@
       </div>
       <!-- Jokes -->
       <div class="text-center jokeSection">
-        <div>
+        <div id="joketext">
           Want to hear a joke instead? <i class="far fa-hand-point-down"></i>
         </div>
-      </div>
-      <div class="text-center jokeSection">
+
         <button
           class="btn btn-dark"
           data-toggle="modal"
@@ -139,10 +130,9 @@
           </div>
         </div>
       </div>
-    </div>
     <div>
-      <div class="container">
-        <div class="text-center counters">
+      <div class="container text-center">
+        <div class="counters">
           <div>
             <span class="moves">0 Move(s)</span>
             <span class="timer">0 time elapsed</span>
@@ -185,7 +175,7 @@
 
     <footer class="text-center">
       <span
-        >Created by Salome Lamprecht. For any comments or suggestions, please
+        >For any comments or suggestions, please
         <a href="mailto:salomelamprecht@gmail.com">click here</a>.</span
       >
     </footer>

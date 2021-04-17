@@ -2,7 +2,7 @@ const grid = $('.grid').hide();
 const counters = $('.counters').hide();
 const gameFunctions = $('.game-functions').hide();
 const levels = $('.difficulty').hide();
-let introduction = $('#introduction');
+const playInstructions = $('#play-instructions').hide();
 let movesText = document.querySelector('.moves');
 let moves = 0;
 // let score = 0;
@@ -798,20 +798,20 @@ $(function chooseTheme() {
 // show hide levels/difficulty when game is setup
 function toggleOn() {
   $(levels).hide();
-  $(introduction).hide();
   $(grid).show();
   $(counters).show();
   $(gameFunctions).show();
+  $(playInstructions).show();
 }
 // once game is underway either restart or quit can be clicked
 function toggleOff() {
   $('.quit').click(function () {
     window.location.href = 'index.html';
     $('.theme').show();
-    $(introduction).show();
     $(grid).hide();
     $(counters).hide();
     $(gameFunctions).hide();
+    $(playInstructions).hide();
   });
   clearInterval(timer);
 }

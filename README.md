@@ -23,18 +23,26 @@ The background image and colours used is primarily aimed at younger players as t
 Please see separate UX folder for planes and wireframes.
 
 ## Features 
-The user is able to choose form a variety of options as well as three difficulty levels and will is presented with a score so that they can keep track of their progress.
+The user is able to choose from a variety of options as well as three difficulty levels and will be able to save their score and if it makes it onto the highscores for that level, then can view the highscore list.  This will enable them to compete against others in the same household when using the same web browser and also compete against themselves to better their score and memory.  
 
-## Frameworks & Technologies Used
-* HTML5
-* CSS3
-* Bootstrap4
-* JavaScript
-* JQuery
-* GoogleFonts
-* FontAwesome
-* Git for version control
-* <img src="/assets/img/readme/GitHub.png" alt="GitHub logo" width="25" height="25"/> GitHub for deployment
+## Technologies
+*Main*
+<img src="/assets/img/readme/html5.png" alt="HTML5 logo" width="25" height="25"/> HTML5
+<img src="/assets/img/readme/css.png" alt="CSS logo" width="25" height="25"/> CSS3
+<img src="/assets/img/readme/javascript.png" alt="JavaScript logo" width="25" height="25"/> JavaScript
+
+*Frameworks & Libraries*
+<img src="/assets/img/readme/bootstrap.png" alt="Bootstrap logo" width="25" height="25"/> Bootstrap4
+<img src="/assets/img/readme/jquery.png" alt="JQuery logo" width="89" height="25"/> JQuery
+<img src="/assets/img/readme/swal.png" alt="SweetAlert logo" width="110" height="25"/> SweetAlert
+
+*Version Control*
+<img src="/assets/img/readme/Git.png" alt="Git logo" width="25" height="25"/> Git for version control
+<img src="/assets/img/readme/GitHub.png" alt="GitHub logo" width="25" height="25"/> GitHub for deployment
+
+*Fonts & Icons*
+<img src="/assets/img/readme/fontawesome.png" alt="FontAwesome logo" width="25" height="25"/> FontAwesome
+<img src="/assets/img/readme/GFLogo.png" alt="Google Fonts logo" width="25" height="25"/> GoogleFonts
 
 ## IDE used
 VS Code
