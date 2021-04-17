@@ -1,8 +1,4 @@
 const grid = $('.grid').hide();
-const counters = $('.counters').hide();
-const gameFunctions = $('.game-functions').hide();
-const levels = $('.difficulty').hide();
-let introduction = $('#introduction');
 let movesText = document.querySelector('.moves');
 let moves = 0;
 // let score = 0;
@@ -769,27 +765,27 @@ let chooseWireFramesTheme = function () {
 // choose theme
 $(function chooseTheme() {
   $('.princesses').click(function () {
-    $(levels).show();
+    document.querySelector('.difficulty').style.display = 'block';
     $('.theme').hide();
     choosePrincesstheme();
   });
   $('.mining').click(function () {
-    $(levels).show();
+    document.querySelector('.difficulty').style.display = 'block';
     $('.theme').hide();
     chooseMiningTheme();
   });
   $('.alphabetNumber').click(function () {
-    $(levels).show();
+    document.querySelector('.difficulty').style.display = 'block';
     $('.theme').hide();
     chooseAlphabetNumberTheme();
   });
   $('.shapes').click(function () {
-    $(levels).show();
+    document.querySelector('.difficulty').style.display = 'block';
     $('.theme').hide();
     chooseShapesTheme();
   });
   $('.wireframes').click(function () {
-    $(levels).show();
+    document.querySelector('.difficulty').style.display = 'block';
     $('.theme').hide();
     chooseWireFramesTheme();
   });
@@ -797,21 +793,21 @@ $(function chooseTheme() {
 
 // show hide levels/difficulty when game is setup
 function toggleOn() {
-  $(levels).hide();
-  $(introduction).hide();
+  document.querySelector('.difficulty').style.display = 'none';
   $(grid).show();
-  $(counters).show();
-  $(gameFunctions).show();
+  document.querySelector('.counters').style.display = 'block';
+  document.querySelector('.game-functions').style.display = 'block';
+  document.querySelector('.play-instructions').style.display = 'block';
 }
 // once game is underway either restart or quit can be clicked
 function toggleOff() {
   $('.quit').click(function () {
     window.location.href = 'index.html';
     $('.theme').show();
-    $(introduction).show();
     $(grid).hide();
-    $(counters).hide();
-    $(gameFunctions).hide();
+    document.querySelector('.counters').style.display = 'none';
+    document.querySelector('.game-functions').style.display = 'none';
+    document.querySelector('.play-instructions').style.display = 'none';
   });
   clearInterval(timer);
 }
@@ -825,8 +821,14 @@ let gameSetup = function () {
 
 // create gameboard
 function gameBoard() {
+  // create html elements to contain gameboard
+  let gameboard = document.querySelector('#gameboard');
+  let gameboardContent = document.createElement('div');
+    gameboardContent.setAttribute('class', 'container grid');
+    gameboard.appendChild(gameboardContent);
   // randomise the cards
   cardsArrayChosen.sort(() => 0.5 - Math.random());
+  // iterate through images of theme selected and create cards
   for (let i = 0; i < cardsArrayChosen.length; i++) {
     let card = document.createElement('img');
     card.setAttribute('src', 'assets/img/squarelightgrey.png');
@@ -856,7 +858,6 @@ function checkIfMatch() {
   if (cardsMatched.length === cardsArrayChosen.length / 2) {
     scoreCalc();
     clearInterval(interval); // stop time from carrying on
-    
   }
   moves++;
   movesText.textContent = `${moves} move(s)`;
@@ -1010,8 +1011,6 @@ const nameEntry = $('.nameEntry').hide();
 const saveScoreBtnEasy = $('#saveScoreBtnEasy').hide();
 const saveScoreBtnMedium = $('#saveScoreBtnMedium').hide();
 const saveScoreBtnHard = $('#saveScoreBtnHard').hide();
-
-// const saveScoreBtn = document.getElementById('saveScore');
 
 // if no high scores available then set the local storage to an empty array
 const highScoresEasy = JSON.parse(localStorage.getItem('highScoresEasy')) || [];

@@ -5,6 +5,15 @@
 
 h1 {
   padding-top: 20px;
+  color: greenyellow;
+}
+
+#introduction strong {
+  color: cyan;
+}
+
+#joketext {
+  color: yellow;
 }
 
 body {
@@ -28,6 +37,10 @@ body {
 }
 .container {
   padding: 5px;
+}
+
+button.btn {
+  margin: 5px;
 }
 
 img {
@@ -135,8 +148,12 @@ li {
   font-family: 'Lobster', cursive;
 }
 
+footer {
+  color: white;
+}
+
 footer a:link {
-  color: black;
+  color: orange;
   text-decoration: none;
 }
 
