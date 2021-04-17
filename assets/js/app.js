@@ -824,8 +824,8 @@ function gameBoard() {
   // create html elements to contain gameboard
   let gameboard = document.querySelector('#gameboard');
   let gameboardContent = document.createElement('div');
-    gameboardContent.setAttribute('class', 'container grid');
-    gameboard.appendChild(gameboardContent);
+  gameboardContent.setAttribute('class', 'container grid');
+  gameboard.appendChild(gameboardContent);
   // randomise the cards
   cardsArrayChosen.sort(() => 0.5 - Math.random());
   // iterate through images of theme selected and create cards
@@ -895,32 +895,44 @@ function scoreCalc() {
     );
     saveScoreBtnEasy.show();
     if (moves <= 5) {
-      swal({text: `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${
+      swal({
+        text: `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${
           second - 1
-        } secs. Your score is 100 out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
+        } secs. Your score is 100 out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`,
+        icon: 'success',
+      });
       yourScore.innerHTML = `Your Score: ${score}`;
       localStorage.setItem('lastScoreEasy', score);
     }
     if (moves > 5 && moves <= 10) {
-      swal({text: `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${
+      swal({
+        text: `That was great, well done! It took you ${moves} moves, ${minute} mins and ${
           second - 1
-        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
+        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`,
+        icon: 'success',
+      });
       yourScore.innerHTML = `Your Score: ${score}`;
       localStorage.setItem('lastScoreEasy', score);
     }
     if (moves > 10 && moves <= 15) {
-      swal({text: `That was great, well done! It took you ${moves} moves, ${minute} mins and ${
+      swal({
+        text: `That was good, well done! It took you ${moves} moves, ${minute} mins and ${
           second - 1
-        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
+        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`,
+        icon: 'success',
+      });
       yourScore.innerHTML = `Your Score: ${score}`;
       localStorage.setItem('lastScoreEasy', score);
-      } else if (moves > 15) {
-      swal({text: `You're doing well, but keep on practicing! It took you ${moves} moves, ${minute} mins and ${
+    } else if (moves > 15) {
+      swal({
+        text: `You're doing well, but keep on practicing! It took you ${moves} moves, ${minute} mins and ${
           second - 1
-        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
-        yourScore.innerHTML = `Your Score: ${score}`;
-        localStorage.setItem('lastScoreEasy', score);
-      }
+        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`,
+        icon: 'success',
+      });
+      yourScore.innerHTML = `Your Score: ${score}`;
+      localStorage.setItem('lastScoreEasy', score);
+    }
   }
 
   // medium levels
@@ -936,32 +948,44 @@ function scoreCalc() {
     );
     saveScoreBtnMedium.show();
     if (moves <= 10) {
-      swal({text: `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${
+      swal({
+        text: `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${
           second - 1
-        } secs. Your score is 100 out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
+        } secs. Your score is 100 out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`,
+        icon: 'success',
+      });
       yourScore.innerHTML = `Your Score: ${score}`;
       localStorage.setItem('lastScoreMedium', score);
     }
     if (moves > 10 && moves <= 20) {
-      swal({text: `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${
+      swal({
+        text: `That was great, well done! It took you ${moves} moves, ${minute} mins and ${
           second - 1
-        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
-        yourScore.innerHTML = `Your Score: ${score}`;
-        localStorage.setItem('lastScoreMedium', score);
-      }
+        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`,
+        icon: 'success',
+      });
+      yourScore.innerHTML = `Your Score: ${score}`;
+      localStorage.setItem('lastScoreMedium', score);
+    }
     if (moves > 20 && moves <= 30) {
-      swal({text: `That was great, well done! It took you ${moves} moves, ${minute} mins and ${
+      swal({
+        text: `That was good, well done! It took you ${moves} moves, ${minute} mins and ${
           second - 1
-        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
-        yourScore.innerHTML = `Your Score: ${score}`;
-        localStorage.setItem('lastScoreMedium', score);
-      } else if (moves > 30) {
-      swal({text: `You're doing well, but keep on practicing! It took you ${moves} moves, ${minute} mins and ${
+        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`,
+        icon: 'success',
+      });
+      yourScore.innerHTML = `Your Score: ${score}`;
+      localStorage.setItem('lastScoreMedium', score);
+    } else if (moves > 30) {
+      swal({
+        text: `You're doing well, but keep on practicing! It took you ${moves} moves, ${minute} mins and ${
           second - 1
-        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
-        yourScore.innerHTML = `Your Score: ${score}`;
-        localStorage.setItem('lastScoreMedium', score);
-      }
+        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`,
+        icon: 'success',
+      });
+      yourScore.innerHTML = `Your Score: ${score}`;
+      localStorage.setItem('lastScoreMedium', score);
+    }
   }
 
   // hard levels
@@ -977,32 +1001,44 @@ function scoreCalc() {
     );
     saveScoreBtnHard.show();
     if (moves <= 20) {
-      swal({text: `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${
+      swal({
+        text: `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${
           second - 1
-        } secs. Your score is 100 out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
+        } secs. Your score is 100 out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`,
+        icon: 'success',
+      });
       yourScore.innerHTML = `Your Score: ${score}`;
       localStorage.setItem('lastScoreHard', score);
     }
     if (moves > 20 && moves <= 30) {
-      swal({text: `That was excellent, well done! It took you ${moves} moves, ${minute} mins and ${
+      swal({
+        text: `That was great, well done! It took you ${moves} moves, ${minute} mins and ${
           second - 1
-        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
-        yourScore.innerHTML = `Your Score: ${score}`;
-        localStorage.setItem('lastScoreHard', score);
-      }
+        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`,
+        icon: 'success',
+      });
+      yourScore.innerHTML = `Your Score: ${score}`;
+      localStorage.setItem('lastScoreHard', score);
+    }
     if (moves > 30 && moves <= 45) {
-      swal({text: `That was great, well done! It took you ${moves} moves, ${minute} mins and ${
+      swal({
+        text: `That was good, well done! It took you ${moves} moves, ${minute} mins and ${
           second - 1
-        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
-        yourScore.innerHTML = `Your Score: ${score}`;
-        localStorage.setItem('lastScoreHard', score);
-      } else if (moves > 45) {
-      swal({text: `You're doing well, but keep on practicing! It took you ${moves} moves, ${minute} mins and ${
+        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`,
+        icon: 'success',
+      });
+      yourScore.innerHTML = `Your Score: ${score}`;
+      localStorage.setItem('lastScoreHard', score);
+    } else if (moves > 45) {
+      swal({
+        text: `You're doing well, but keep on practicing! It took you ${moves} moves, ${minute} mins and ${
           second - 1
-        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`, icon: 'success'});
-        yourScore.innerHTML = `Your Score: ${score}`;
-        localStorage.setItem('lastScoreHard', score);
-      }
+        } secs. Your score is ${score} out of a possible 100.\nPlease enter your name below and click save to see if you've made it to the High Scores list!`,
+        icon: 'success',
+      });
+      yourScore.innerHTML = `Your Score: ${score}`;
+      localStorage.setItem('lastScoreHard', score);
+    }
   }
 }
 
@@ -1014,7 +1050,8 @@ const saveScoreBtnHard = $('#saveScoreBtnHard').hide();
 
 // if no high scores available then set the local storage to an empty array
 const highScoresEasy = JSON.parse(localStorage.getItem('highScoresEasy')) || [];
-const highScoresMedium = JSON.parse(localStorage.getItem('highScoresMedium')) || [];
+const highScoresMedium =
+  JSON.parse(localStorage.getItem('highScoresMedium')) || [];
 const highScoresHard = JSON.parse(localStorage.getItem('highScoresHard')) || [];
 // last score and username entered and store in local storage
 // function saveHighScores() {
@@ -1030,9 +1067,12 @@ function highScoresEasyFunc() {
   highScoresEasy.sort((a, b) => b.score - a.score);
   highScoresEasy.splice(10);
   localStorage.setItem('highScoresEasy', JSON.stringify(highScoresEasy));
-} document.getElementById('saveScoreBtnEasy').addEventListener('click', highScoresEasyFunc);
+}
+document
+  .getElementById('saveScoreBtnEasy')
+  .addEventListener('click', highScoresEasyFunc);
 
-  function highScoresMediumFunc() {
+function highScoresMediumFunc() {
   const lastScoreMedium = JSON.parse(localStorage.getItem('lastScoreMedium'));
   const myScores = {
     score: lastScoreMedium,
@@ -1044,7 +1084,10 @@ function highScoresEasyFunc() {
   highScoresMedium.sort((a, b) => b.score - a.score);
   highScoresMedium.splice(10);
   localStorage.setItem('highScoresMedium', JSON.stringify(highScoresMedium));
-} document.getElementById('saveScoreBtnMedium').addEventListener('click', highScoresMediumFunc);
+}
+document
+  .getElementById('saveScoreBtnMedium')
+  .addEventListener('click', highScoresMediumFunc);
 
 function highScoresHardFunc() {
   const lastScoreHard = JSON.parse(localStorage.getItem('lastScoreHard'));
@@ -1058,4 +1101,7 @@ function highScoresHardFunc() {
   highScoresHard.sort((a, b) => b.score - a.score);
   highScoresHard.splice(10);
   localStorage.setItem('highScoresHard', JSON.stringify(highScoresHard));
-} document.getElementById('saveScoreBtnHard').addEventListener('click', highScoresHardFunc);
+}
+document
+  .getElementById('saveScoreBtnHard')
+  .addEventListener('click', highScoresHardFunc);
