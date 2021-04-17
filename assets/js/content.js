@@ -105,7 +105,7 @@ function gameCountersFunc() {
     highScoresBtn.textContent = 'High Scores';
     highScoresBtn.addEventListener('click', function() {
       window.open('highscores.html');
-    })
+    });
     counterContainer.appendChild(highScoresBtn);
 
   let countersDiv = document.createElement('div');
