@@ -97,8 +97,6 @@ function intro() {
   gameFunctions.appendChild(quitBtn);
 }
 
-intro();
-
 function gameCountersFunc() {
   let counterContainer = document.createElement('div');
   counterContainer.setAttribute('class', 'container text-center');
@@ -170,4 +168,7 @@ function gameCountersFunc() {
   nameEntryForm.appendChild(scoreHardBtn);
 }
 
+intro();
 gameCountersFunc();
+
+
