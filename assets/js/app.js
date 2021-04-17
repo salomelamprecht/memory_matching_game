@@ -881,7 +881,7 @@ function flipcard() {
 // SCORING
 // create score calculation function to keep track of scores
 function scoreCalc() {
-  nameEntry.show();
+  document.querySelector('#username').style.display = 'inline';
   // easy levels
   if (
     cardsArrayChosen.length === 10 &&
@@ -1043,7 +1043,6 @@ function scoreCalc() {
 }
 
 // save scores to local storage
-const nameEntry = $('.nameEntry').hide();
 const saveScoreBtnEasy = $('#saveScoreBtnEasy').hide();
 const saveScoreBtnMedium = $('#saveScoreBtnMedium').hide();
 const saveScoreBtnHard = $('#saveScoreBtnHard').hide();

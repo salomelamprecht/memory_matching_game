@@ -113,7 +113,7 @@ function gameCountersFunc() {
   counterContainer.appendChild(highScoresBtn);
 
   let countersDiv = document.createElement('div');
-  countersDiv.setAttribute('class', 'counters');
+  countersDiv.setAttribute('class', 'text-center counters');
   countersDiv.style.display = 'none';
   gameCounters.appendChild(countersDiv);
 
@@ -148,6 +148,7 @@ function gameCountersFunc() {
   formInput.name = 'username';
   formInput.setAttribute('id', 'username');
   formInput.placeholder = 'player name';
+  formInput.style.display = 'none';
   nameEntryForm.appendChild(formInput);
 
   let scoreEasyBtn = document.createElement('button');
