@@ -1,6 +1,5 @@
 let movesText = document.querySelector('.moves');
 let moves = 0;
-// let score = 0;
 let second = 0,
   minute = 0;
 let timer = document.querySelector('.timer');
@@ -145,6 +144,7 @@ const princessCardsArrayHard = [
     img: 'assets/img/princesses/cinderella-shoe.png',
   },
 ];
+
 // mining theme
 const miningCardsArrayEasy = [
   {
@@ -797,7 +797,7 @@ function toggleOn() {
   document.querySelector('.game-functions').style.display = 'block';
   document.querySelector('.play-instructions').style.display = 'inline';
 }
-// once game is underway either restart or quit can be clicked
+// once game is underway quit can be clicked
 function toggleOff() {
   $('.quit').click(function () {
     window.location.href = 'index.html';
@@ -835,7 +835,7 @@ function gameBoard() {
   }
 }
 
-// check if the cards selected were a match
+// check if the cards selected were a match and if not replace with placeholder card image
 function checkIfMatch() {
   let cards = document.querySelectorAll('img');
   const firstCardId = cardsSelectedId[0];
