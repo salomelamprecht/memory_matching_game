@@ -48,37 +48,38 @@
   </head>
 
   <body>
-    <section>
-      <div class="text-center"> 
+    <div class="container">
+      <div class="text-center">
         <h1>High Scores</h1>
-        <div class="text-center">        
-          <button class="btn btn-secondary" onClick="parent.open('index.html')">Home</button> 
-          <p>List of high scores saved in local storage to go here</p>
+        <div class="text-center">
+          <h3>List of high scores saved in local storage to go here</h3>
         </div>
-        <div class="container">
+        <div class="container-fluid">
           <div class="row">
-        <div id="highscoresEasy" class="col">
-          <h3>Easy Levels</h3>
-          <ul id="highScoreListEasy">
-          </ul>
-        </div>
-        <div id="highscoresMedium" class="col">
-          <h3>Medium Levels</h3>
-          <ul id="highScoreListMedium">
-          </ul>
-        </div>
-        <div id="highscoresHard" class="col">
-          <h3>Hard Levels</h3>
-          <ul id="highScoreListHard">
-          </ul>
+            <div id="highscoresEasy" class="col-sm">
+              <h3>Easy Levels</h3>
+              <ul id="highScoreListEasy"></ul>
+            </div>
+            <div id="highscoresMedium" class="col-sm">
+              <h3>Medium Levels</h3>
+              <ul id="highScoreListMedium"></ul>
+            </div>
+            <div id="highscoresHard" class="col-sm">
+              <h3>Hard Levels</h3>
+              <ul id="highScoreListHard"></ul>
+            </div>
+          </div>
         </div>
       </div>
+      <div class="text-center">
+        <button class="btn btn-warning" onClick="parent.open('index.html')">
+          Home
+        </button>
       </div>
-      </div>
-    </section>
+    </div>
     <footer class="text-center">
       <span
-        >Created by Salome Lamprecht. For any comments or suggestions, please
+        >For any comments or suggestions, please
         <a href="mailto:salomelamprecht@gmail.com">click here</a>.</span
       >
     </footer>
@@ -107,6 +108,6 @@
     ></script>
 
     <!-- load highscores.js -->
-    <script type="text/javascript" src="assets/js/highscores.js" defer></script>
+    <script src="assets/js/highscores.js" defer></script>
   </body>
 </html>

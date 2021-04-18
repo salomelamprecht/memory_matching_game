@@ -5,13 +5,22 @@
 
 h1 {
   padding-top: 20px;
+  color: greenyellow;
+}
+
+#introduction strong {
+  color: cyan;
+}
+
+#joketext {
+  color: yellow;
 }
 
 body {
   font-family: 'Bubblegum Sans', sans-serif;
   font-size: 20px;
   color: white;
-  background-image: url("../../assets/img/gamingvinny.png");
+  background-image: url('../../assets/img/gamingvinny.png');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -30,12 +39,14 @@ body {
   padding: 5px;
 }
 
+button.btn {
+  margin: 5px;
+}
+
 img {
   flex: 0 0 50px;
   position: relative;
   padding: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
   border-radius: 5px;
   box-shadow: 5px 5px 10px -4px rgba(0, 0, 0, 0.95);
 }
@@ -53,7 +64,7 @@ img {
 }
 
 /* jokes modal styling */
-.modal-content{ 
+.modal-content {
   border-radius: 10px;
   border: 10px solid rgba(122, 195, 192, 0.5);
   background: linear-gradient(360deg, #f7f7f7, #15c0cf);
@@ -88,11 +99,13 @@ img {
   border: 1px solid #3e549a;
 }
 
-.swal-button:not([disabled]):hover{
+.swal-button:not([disabled]):hover {
   background-color: #f7a4a1;
 }
 
-.swal-icon--success:after, .swal-icon--success:before, .swal-icon--success__hide-corners {
+.swal-icon--success:after,
+.swal-icon--success:before,
+.swal-icon--success__hide-corners {
   background-color: #4ff8f8;
 }
 
@@ -135,8 +148,12 @@ li {
   font-family: 'Lobster', cursive;
 }
 
+footer {
+  color: white;
+}
+
 footer a:link {
-  color: black;
+  color: orange;
   text-decoration: none;
 }
 
