@@ -1,5 +1,6 @@
 let introduction = document.querySelector('#introduction');
 let gameCounters = document.querySelector('#gameCounters');
+let jokes = document.querySelector('#jokes');
 
 function intro() {
   let heading = document.createElement('h1');
@@ -168,7 +169,63 @@ function gameCountersFunc() {
   nameEntryForm.appendChild(scoreHardBtn);
 }
 
+function jokesSec() {
+  let jokeSectionDiv = document.createElement('div');
+    jokeSectionDiv.setAttribute('class', 'text-center jokeSection');
+    jokes.appendChild(jokeSectionDiv);
+
+  let jokeTextDiv = document.createElement('div');
+    jokeTextDiv.setAttribute('id', 'joketext');
+    jokeTextDiv.textContent = 'Want to hear a joke instead?';
+    jokeSectionDiv.appendChild(jokeTextDiv);
+  
+  let pointImg = document.createElement('i');
+    pointImg.setAttribute('class', 'far fa-hand-point-down');
+    jokeTextDiv.appendChild(pointImg);
+  
+  let jokesbutton = document.createElement('button');
+    jokesbutton.setAttribute('class', 'btn btn-dark');
+    jokesbutton.setAttribute('id', 'jokesBtn');
+    jokesbutton.setAttribute('data-toggle', 'modal');
+    jokesbutton.setAttribute('data-target', '#exampleModalCenter');
+    jokesbutton.textContent = 'Jokes';
+    jokeTextDiv.appendChild(jokesbutton);
+  
+  let modalFade = document.createElement('div');
+    modalFade.setAttribute('class', 'modal fade');
+    modalFade.setAttribute('id', 'exampleModalCenter');
+    modalFade.setAttribute('tabindex', '-1');
+    modalFade.setAttribute('role', 'dialog');
+    modalFade.setAttribute('aria-hidden', 'true');
+    jokeSectionDiv.appendChild(modalFade);
+
+  let modalDialog = document.createElement('div');
+    modalDialog.setAttribute('class', 'modal-dialog');
+    modalDialog.setAttribute('modal-dialog-centered');
+    modalDialog.setAttribute('role', 'document');
+    modalFade.appendChild(modalDialog);
+}
+
 intro();
-gameCountersFunc();
+gameCountersFunc(); 
+jokesSec();
 
-
+/* <div class="text-center jokeSection"> // child of jokes
+        <div id="joketext"> child of jokesection
+          Want to hear a joke instead? <i class="far fa-hand-point-down"></i></div> 
+        <button // child of jokesection
+          class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter" id="jokesBtn">Jokes</button> 
+        // Modal 
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">  // child of jokesection 
+          <div class="modal-dialog modal-dialog-centered" role="document">  // child of modalfade */
+            <div class="modal-content">
+              <div class="modal-body" id="jokesDiv"></div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-dark" data-dismiss="modal">
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> */
