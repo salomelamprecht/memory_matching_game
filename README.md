@@ -25,7 +25,18 @@ The game is targeted at younger players so has been kept as simple as possible w
 
 As the game is targeted for younger players, the background image and colours used are aimed specifically at them, though parents and grandparents may well also like to play the game, especiallly when playing against one another in a family setting.
 
-Please see separate UX folder for planes and wireframes.
+### Wireframes
+*Desktop*
+<img src="/assets/img/readme/homescreen.png" alt="Desktop wireframe of homescreen" style="max-width: 75%"/>
+<img src="/assets/img/readme/levelselectionpage.png" alt="Desktop wireframe of levelselection" style="max-width: 75%"/>
+<img src="/assets/img/readme/gameboardpage.png" alt="Desktop wireframe of gameboard" style="max-width: 75%"/>
+<img src="/assets/img/readme/highscorespage.png" alt="Desktop wireframe of highscores page" style="max-width: 75%"/>
+
+*Mobile*
+<img src="/assets/img/readme/mobilewf1.png" alt="Mobile wireframe of theme and selection" style="max-width: 33%"/>
+<img src="/assets/img/readme/mobilewf2.png" alt="Mobile wireframe of gameboard and highscores" style="max-width: 33%"/>
+
+Please see separate UX folder for planes.
 
 ## Features 
 The user is able to choose from a variety of options as well as three difficulty levels and will be able to save their score and if their score makes it onto the highscores for that level, they can view the highscore list.  This will enable them to compete against others in the same household when using the same web browser and also compete against themselves to better their score and memory.
@@ -106,13 +117,13 @@ Please see below and also in the features sections where there are some images s
 * When completing the game and clicking on quit, the game would reload but the previous gameboard would not be replaced.  This was fixed with reloading the page.
 * Image cards were not loading correctly, different sizes depending on size of screen etc.  Fixed by fixing the cards height and width to 100px.
 * User was unable to select different themes and levels without having multiple different functions for the same thing but different theme and difficulty.  Fixed by pushing the themed arrays into a separate empty array and then emptying the array upon game completion. 
-* Whenever saving the user's name against the highscores list, it saved all of easy, medium and hard levels to 1 highscores table.  Changed this so that easy, medium and hard level scores are separated out with their own top 10 highscores list.
-* As the user wins an alert was showing, this was changed to a modal instead for the total moves, time taken and score as well as congratulations message for the different levels.
+* Whenever saving the user's name against the highscores list, it saved all of easy, medium and hard levels to 1 highscores table.  Changed this so that easy, medium and hard level scores are separated out with their own top 10 highscores list. 
+* As the user wins an alert was showing, this was changed to a modal instead for the total moves, time taken and score as well as congratulations message for the different levels. 
+* localStorage easy did not clear fully when running localStorage.clear() in console, this was due to duplicate code. Fixed.
 
 **Some outstanding issues that still need to be resolved are:**
 * If the user clicks on the cards too fast, same card twice or keeps clicking and doesn't wait for the cards to turn over, matching no longer works as it should.  
 * Timer currently starts before first click and does not stop on last click. 
-* localStorage easy clears with localStorage.clear() in console, however when saving a new score after clearing all previous easy scores up to 10 are listed on the highscores.  Not an issue for frontend player that does not look at the console.
 * Extra move is counted on at end but does not affect score.
 
 I uploaded to GitHub and then also tested the website using tablets and mobiles.  Most responsive testing was completed in Chrome.
