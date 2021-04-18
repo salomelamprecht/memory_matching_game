@@ -98,6 +98,7 @@ function intro() {
   gameFunctions.appendChild(quitBtn);
 }
 
+// create game counters and scoring
 function gameCountersFunc() {
   let counterContainer = document.createElement('div');
   counterContainer.setAttribute('class', 'container text-center');
@@ -169,6 +170,7 @@ function gameCountersFunc() {
   nameEntryForm.appendChild(scoreHardBtn);
 }
 
+// add HTML for API
 function jokesSec() {
   let jokeSectionDiv = document.createElement('div');
   jokeSectionDiv.setAttribute('class', 'text-center jokeSection');

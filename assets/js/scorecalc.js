@@ -171,9 +171,9 @@ const saveScoreBtnHard = $('#saveScoreBtnHard').hide();
 const highScoresEasy = JSON.parse(localStorage.getItem('highScoresEasy')) || [];
 const highScoresMedium =
   JSON.parse(localStorage.getItem('highScoresMedium')) || [];
-const highScoresHard = JSON.parse(localStorage.getItem('highScoresHard')) || [];
+const highScoresHard = JSON.parse(localStorage.getItem('highScoresHard')) || []; 
+
 // last score and username entered and store in local storage
-// function saveHighScores() {
 function highScoresEasyFunc() {
   const lastScoreEasy = JSON.parse(localStorage.getItem('lastScoreEasy'));
   const myScores = {

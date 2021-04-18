@@ -1,5 +1,5 @@
 const highScoreListEasy = document.getElementById('highScoreListEasy');
-const highScoresEasy = JSON.parse(localStorage.getItem('highScoresEasy')) || [];
+const highScoresEasy = JSON.parse(localStorage.getItem('highScoresEasy')) || []; 
 
 highScoreListEasy.innerHTML = highScoresEasy
   .map((score) => {
