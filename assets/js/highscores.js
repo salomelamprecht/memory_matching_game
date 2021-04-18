@@ -8,8 +8,7 @@ highScoreListEasy.innerHTML = highScoresEasy
   .join('');
 
 const highScoreListMedium = document.getElementById('highScoreListMedium');
-const highScoresMedium =
-  JSON.parse(localStorage.getItem('highScoresMedium')) || [];
+const highScoresMedium = JSON.parse(localStorage.getItem('highScoresMedium')) || [];
 
 highScoreListMedium.innerHTML = highScoresMedium
   .map((score) => {
