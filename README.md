@@ -19,7 +19,7 @@ Some user stories that have been identified are:
 8.  As a user I want to be able to have an alternative to just playing the game.
 
 ## UX
-<img src="/assets/img/readme/gameimage.png" alt="Image of game startup screen" style="max-width: 100%"/>
+<img src="/assets/img/readme/gameimage.PNG" alt="Image of game startup screen" style="max-width: 100%"/>
 
 The game is targeted at younger players so has been kept as simple as possible with only two html pages and mainly navigated by the user selecting buttons which hide and show elements.  The majority of elements are created with javascript apart from the basic structure of the page.
 
@@ -32,19 +32,19 @@ The user is able to choose from a variety of options as well as three difficulty
 
 ### Feature 1
 The user can select the theme they want to play.
-<img src="/assets/img/readme/themeselection.png" alt="Image of game themes" style="max-width: 100%"/>
+<img src="/assets/img/readme/themeselection.PNG" alt="Image of game themes" style="max-width: 100%"/>
 
 ### Feature 2
 The user can choose between easy, medium or hard difficulty levels.
-<img src="/assets/img/readme/levelselection.png" alt="Image of game levels" style="max-width: 100%"/>
+<img src="/assets/img/readme/levelselection.PNG" alt="Image of game levels" style="max-width: 100%"/>
 
 ### Feature 3
 The user can save their score to localStorage.
-<img src="/assets/img/readme/savescore.png" alt="Image of saving player score" style="max-width: 100%"/>
+<img src="/assets/img/readme/savescore.PNG" alt="Image of saving player score" style="max-width: 100%"/>
 
 ### Feature 4
 The user can see if they're on the highscores list and compete against others.
-<img src="/assets/img/readme/highscores.png" alt="Image of highscores list" style="max-width: 100%"/>
+<img src="/assets/img/readme/highscores.PNG" alt="Image of highscores list" style="max-width: 100%"/>
 
 ## Technologies
 *Main*
