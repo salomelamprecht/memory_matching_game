@@ -55,8 +55,8 @@ function intro() {
   themeParentDiv.appendChild(playInstructionsDiv);
 
   let instructionTxt = document.createElement('p');
-  instructionTxt.textContent =
-    'Your timer has started Pick 2 cards. If your 2 cards match, pick another 2 cards! Continue selecting cards until you have matched them all! Have FUN!';
+  instructionTxt.setAttribute('style', 'white-space: pre;');
+  instructionTxt.innerHTML = `Your timer has started! \r\n Pick 2 cards, if your 2 cards match, pick another 2 cards! \r\n Continue picking 2 cards until you have matched them all! \r\n Have FUN!`;
   playInstructionsDiv.appendChild(instructionTxt);
 
   let difficultyDiv = document.createElement('div');
