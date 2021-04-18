@@ -795,7 +795,7 @@ function toggleOn() {
   document.querySelector('.difficulty').style.display = 'none';
   document.querySelector('.counters').style.display = 'block';
   document.querySelector('.game-functions').style.display = 'block';
-  document.querySelector('.play-instructions').style.display = 'block';
+  document.querySelector('.play-instructions').style.display = 'inline';
 }
 // once game is underway either restart or quit can be clicked
 function toggleOff() {
