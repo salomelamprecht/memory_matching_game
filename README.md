@@ -27,12 +27,14 @@ As the game is targeted for younger players, the background image and colours us
 
 ### Wireframes
 *Desktop*
+<br />
 <img src="/assets/img/readme/homescreen.png" alt="Desktop wireframe of homescreen" style="max-width: 75%"/>
 <img src="/assets/img/readme/levelselectionpage.png" alt="Desktop wireframe of levelselection" style="max-width: 75%"/>
 <img src="/assets/img/readme/gameboardpage.png" alt="Desktop wireframe of gameboard" style="max-width: 75%"/>
 <img src="/assets/img/readme/highscorespage.png" alt="Desktop wireframe of highscores page" style="max-width: 75%"/>
 
 *Mobile*
+<br />
 <img src="/assets/img/readme/mobilewf1.png" alt="Mobile wireframe of theme and selection" style="max-width: 33%"/>
 <img src="/assets/img/readme/mobilewf2.png" alt="Mobile wireframe of gameboard and highscores" style="max-width: 33%"/>
 
