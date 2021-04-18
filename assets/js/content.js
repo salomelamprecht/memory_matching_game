@@ -189,7 +189,7 @@ function jokesSec() {
     jokesbutton.setAttribute('data-toggle', 'modal');
     jokesbutton.setAttribute('data-target', '#exampleModalCenter');
     jokesbutton.textContent = 'Jokes';
-    jokeTextDiv.appendChild(jokesbutton);
+    jokeSectionDiv.appendChild(jokesbutton);
   
   let modalFade = document.createElement('div');
     modalFade.setAttribute('class', 'modal fade');
@@ -200,32 +200,31 @@ function jokesSec() {
     jokeSectionDiv.appendChild(modalFade);
 
   let modalDialog = document.createElement('div');
-    modalDialog.setAttribute('class', 'modal-dialog');
-    modalDialog.setAttribute('modal-dialog-centered');
+    modalDialog.setAttribute('class', 'modal-dialog modal-dialog-centered');
     modalDialog.setAttribute('role', 'document');
     modalFade.appendChild(modalDialog);
+  
+  let modalContent = document.createElement('div');
+    modalContent.setAttribute('class', 'modal-content');
+    modalDialog.appendChild(modalContent);
+
+  let modalBody = document.createElement('div');
+    modalBody.setAttribute('class', 'modal-body');
+    modalBody.setAttribute('id', 'jokesDiv');
+    modalContent.appendChild(modalBody);
+
+  let modalFooter = document.createElement('div');
+    modalFooter.setAttribute('class', 'modal-footer');
+    modalContent.appendChild(modalFooter);
+  
+  let modalCloseBtn = document.createElement('button');
+    modalCloseBtn.setAttribute('type', 'button');
+    modalCloseBtn.setAttribute('class', 'btn btn-dark');
+    modalCloseBtn.setAttribute('data-dismiss', 'modal');
+    modalCloseBtn.textContent = 'Close';
+    modalFooter.appendChild(modalCloseBtn);
 }
 
 intro();
 gameCountersFunc(); 
 jokesSec();
-
-/* <div class="text-center jokeSection"> // child of jokes
-        <div id="joketext"> child of jokesection
-          Want to hear a joke instead? <i class="far fa-hand-point-down"></i></div> 
-        <button // child of jokesection
-          class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter" id="jokesBtn">Jokes</button> 
-        // Modal 
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">  // child of jokesection 
-          <div class="modal-dialog modal-dialog-centered" role="document">  // child of modalfade */
-            <div class="modal-content">
-              <div class="modal-body" id="jokesDiv"></div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-dark" data-dismiss="modal">
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */
