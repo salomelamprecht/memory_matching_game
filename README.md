@@ -79,6 +79,7 @@ I used console.log() throughout to nesure the game was functioning the way I nee
 * If the user clicks on the cards too fast, same card twice or keeps clicking and doesn't wait for the cards to turn over, matching no longer works as it should.  
 * As the user wins currently this shows as an alert rather than a modal
 * Timer currently starts before first click and does not stop on last click.
+* localStorage easy clears with localStorage.clear() in console, however when saving a new score after clearing all previous easy scores up to 10 are listed on the highscores.  Not an issue for frontend player that does not look at the console.
 
 I uploaded to GitHub and then also tested the website using tablets and mobiles.  Most responsive testing was completed in Chrome.
 
