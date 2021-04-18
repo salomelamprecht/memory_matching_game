@@ -1,4 +1,6 @@
 # Memory Matching Game
+https://salomelamprecht.github.io/memory_matching_game/ 
+
 This matching game is mainly for use by children, however can also be enjoyed by adults especially on the harder levels.  The integrated Jokes API also has some really good jokes and all jokes have been filtered to ensure suitable for younger players.  
 It has been shown that matching games can improve and support cognitive function for elderly and those suffering with dementia, so kids can also play with their grandparents.
 
@@ -145,6 +147,24 @@ Installed jshint in the terminal.  Validated code throughout.
 I used git for version control.  Created a working-branch & working-branch2 for all added changes before committing to the master branch to ensure new additions to the game did not impact on the working game code in the master branch.  Used push and pull requests to update master branch with successful additions.  Working-branch has been left to show where a major change to html occurred.  Working-branch2 merged with master as this is the branch where I used javascript to create the majority of HTML in the content.js file.
 
 ## Deployment
+This project was developed using the VS Code IDE, committed to git and pushed to GitHub using git from the terminal.
+
+### Deploying to GitHub Pages from a GitHub repository
+* Login to GitHub and navigate to salomelamprecht/memory_matching_game 
+* Go to the settings tab and navigate to Pages
+* Under source select the Master branch and click save to deploy to GitHub Pages.
+
+### Deploying locally
+* Login to GitHub and navigate to salomelamprecht/memory_matching_game
+* Select the source you wish to clone or download and click on CODE and select Clone or Download.
+
+*Clone*
+* Type: *git bash* in your IDE terminal
+* Change your working directory to where you want to save the repository to
+* Type: *git clone https://github.com/salomelamprecht/memory_matching_game.git* 
+
+*Download*
+* Open your IDE and open the saved repository folder
 
 ## Credits 
 ### Useful articles and game how to guides used:
