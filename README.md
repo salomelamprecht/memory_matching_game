@@ -85,9 +85,20 @@ $(function chooseTheme() {
 ### *Manual Testing*
 Whilst developing the game, I frequently previewed it in order to check the layout and content as well as its responsiveness.  I did this throughout the development period.  
 
-I used git version control and a working branch to ensure that any changes were commited to the master branch only when happy with the progress.  
+I used git version control and a two working branches to ensure that any changes were commited to the master branch only when happy with the progress.  Commits added throughout as and when larger changes were made whilst using working branches.  
 
-I used console.log() throughout to nesure the game was functioning the way I needed it to. 
+I used console.log() throughout to ensure the game was functioning the way I needed it to. 
+
+#### Testing against user stories
+Please see below and also in the features sections where there are some images showing how this works.
+1.	Navigating the game is easy with the simple layout. Buttons only become available as the user makes their choices throughout therefore simplifying the whole design.
+2.	The instructions are displayed to the user when the game starts and stays for the duration of the game so that the user can refer back to it if required. 
+3.	Themes are easily selected by the click of a button.
+4.	Difficulty levels can be easily selected by the click of a button. 
+5.	If the user changes their mind and no longer wants to play the game they selected, they can select quit button and it will take them back to where they can make new selections.
+6.	Users can contact the developer by emailing them through the link available in the footer.
+7.	Users can play against family and friends and keep score using the same web browser's localStorage.
+8.  There are jokes for the user to enjoy should they wish to take a break from playing the game.  This is done by selecting the jokes button below the game's main section.
 
 **Some of the issues encountered and fixed are as follows:**
 
@@ -95,18 +106,16 @@ I used console.log() throughout to nesure the game was functioning the way I nee
 * When completing the game and clicking on quit, the game would reload but the previous gameboard would not be replaced.  This was fixed with reloading the page.
 * Image cards were not loading correctly, different sizes depending on size of screen etc.  Fixed by fixing the cards height and width to 100px.
 * User was unable to select different themes and levels without having multiple different functions for the same thing but different theme and difficulty.  Fixed by pushing the themed arrays into a separate empty array and then emptying the array upon game completion. 
+* Whenever saving the user's name against the highscores list, it saved all of easy, medium and hard levels to 1 highscores table.  Changed this so that easy, medium and hard level scores are separated out with their own top 10 highscores list.
+* As the user wins an alert was showing, this was changed to a modal instead for the total moves, time taken and score as well as congratulations message for the different levels.
 
 **Some outstanding issues that still need to be resolved are:**
 * If the user clicks on the cards too fast, same card twice or keeps clicking and doesn't wait for the cards to turn over, matching no longer works as it should.  
-* As the user wins currently this shows as an alert rather than a modal
 * Timer currently starts before first click and does not stop on last click. 
 * localStorage easy clears with localStorage.clear() in console, however when saving a new score after clearing all previous easy scores up to 10 are listed on the highscores.  Not an issue for frontend player that does not look at the console.
 * Extra move is counted on at end but does not affect score.
 
 I uploaded to GitHub and then also tested the website using tablets and mobiles.  Most responsive testing was completed in Chrome.
-
-## Version Control
-I used git for version control.  Created a working-branch for all added changes before committing to the master branch to ensure new additions to the game did not impact on the working game code in the master branch.  Used push and pull requests to update master branch with successful additions.
 
 ### *Online Validators*
 #### *HTML Validator* (https://validator.w3.org/)
@@ -117,6 +126,10 @@ Type attribute unnecessary for JavaScript resources - removed.
 No errors found.
 
 #### *JavaScript Validator* (https://jshint.com/)
+Installed jshint in the terminal.  Validated code throughout. 
+
+## Version Control
+I used git for version control.  Created a working-branch & working-branch2 for all added changes before committing to the master branch to ensure new additions to the game did not impact on the working game code in the master branch.  Used push and pull requests to update master branch with successful additions.  Working-branch has been left to show where a major change to html occurred.  Working-branch2 merged with master as this is the branch where I used javascript to create the majority of HTML in the content.js file.
 
 ## Deployment
 
