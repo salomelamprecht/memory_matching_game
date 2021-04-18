@@ -8,7 +8,7 @@ function scoreCalc() {
     cardsArrayChosen.length === cardsMatched.length * 2
   ) {
     let minimumMoves = 5;
-    let minimumTime = 10;
+    let minimumTime = 13;
     let seconds = minute * 60 + second;
     let score = Math.round(
       (minimumTime / seconds) * (minimumMoves / moves) * 100
@@ -113,8 +113,8 @@ function scoreCalc() {
     cardsArrayChosen.length === 30 &&
     cardsArrayChosen.length === cardsMatched.length * 2
   ) {
-    let minimumMoves = 20;
-    let minimumTime = 50;
+    let minimumMoves = 30;
+    let minimumTime = 60;
     let seconds = minute * 60 + second;
     let score = Math.round(
       (minimumTime / seconds) * (minimumMoves / moves) * 100
@@ -169,7 +169,8 @@ const saveScoreBtnHard = $('#saveScoreBtnHard').hide();
 
 // if no high scores available then set the local storage to an empty array
 const highScoresEasy = JSON.parse(localStorage.getItem('highScoresEasy')) || [];
-const highScoresMedium = JSON.parse(localStorage.getItem('highScoresMedium')) || [];
+const highScoresMedium =
+  JSON.parse(localStorage.getItem('highScoresMedium')) || [];
 const highScoresHard = JSON.parse(localStorage.getItem('highScoresHard')) || [];
 // last score and username entered and store in local storage
 // function saveHighScores() {
