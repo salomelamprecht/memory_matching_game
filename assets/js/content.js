@@ -171,60 +171,60 @@ function gameCountersFunc() {
 
 function jokesSec() {
   let jokeSectionDiv = document.createElement('div');
-    jokeSectionDiv.setAttribute('class', 'text-center jokeSection');
-    jokes.appendChild(jokeSectionDiv);
+  jokeSectionDiv.setAttribute('class', 'text-center jokeSection');
+  jokes.appendChild(jokeSectionDiv);
 
   let jokeTextDiv = document.createElement('div');
-    jokeTextDiv.setAttribute('id', 'joketext');
-    jokeTextDiv.textContent = 'Want to hear a joke instead?';
-    jokeSectionDiv.appendChild(jokeTextDiv);
-  
+  jokeTextDiv.setAttribute('id', 'joketext');
+  jokeTextDiv.textContent = 'Want to hear a joke instead?';
+  jokeSectionDiv.appendChild(jokeTextDiv);
+
   let pointImg = document.createElement('i');
-    pointImg.setAttribute('class', 'far fa-hand-point-down');
-    jokeTextDiv.appendChild(pointImg);
-  
+  pointImg.setAttribute('class', 'far fa-hand-point-down');
+  jokeTextDiv.appendChild(pointImg);
+
   let jokesbutton = document.createElement('button');
-    jokesbutton.setAttribute('class', 'btn btn-dark');
-    jokesbutton.setAttribute('id', 'jokesBtn');
-    jokesbutton.setAttribute('data-toggle', 'modal');
-    jokesbutton.setAttribute('data-target', '#exampleModalCenter');
-    jokesbutton.textContent = 'Jokes';
-    jokeSectionDiv.appendChild(jokesbutton);
-  
+  jokesbutton.setAttribute('class', 'btn btn-dark');
+  jokesbutton.setAttribute('id', 'jokesBtn');
+  jokesbutton.setAttribute('data-toggle', 'modal');
+  jokesbutton.setAttribute('data-target', '#exampleModalCenter');
+  jokesbutton.textContent = 'Jokes';
+  jokeSectionDiv.appendChild(jokesbutton);
+
   let modalFade = document.createElement('div');
-    modalFade.setAttribute('class', 'modal fade');
-    modalFade.setAttribute('id', 'exampleModalCenter');
-    modalFade.setAttribute('tabindex', '-1');
-    modalFade.setAttribute('role', 'dialog');
-    modalFade.setAttribute('aria-hidden', 'true');
-    jokeSectionDiv.appendChild(modalFade);
+  modalFade.setAttribute('class', 'modal fade');
+  modalFade.setAttribute('id', 'exampleModalCenter');
+  modalFade.setAttribute('tabindex', '-1');
+  modalFade.setAttribute('role', 'dialog');
+  modalFade.setAttribute('aria-hidden', 'true');
+  jokeSectionDiv.appendChild(modalFade);
 
   let modalDialog = document.createElement('div');
-    modalDialog.setAttribute('class', 'modal-dialog modal-dialog-centered');
-    modalDialog.setAttribute('role', 'document');
-    modalFade.appendChild(modalDialog);
-  
+  modalDialog.setAttribute('class', 'modal-dialog modal-dialog-centered');
+  modalDialog.setAttribute('role', 'document');
+  modalFade.appendChild(modalDialog);
+
   let modalContent = document.createElement('div');
-    modalContent.setAttribute('class', 'modal-content');
-    modalDialog.appendChild(modalContent);
+  modalContent.setAttribute('class', 'modal-content');
+  modalDialog.appendChild(modalContent);
 
   let modalBody = document.createElement('div');
-    modalBody.setAttribute('class', 'modal-body');
-    modalBody.setAttribute('id', 'jokesDiv');
-    modalContent.appendChild(modalBody);
+  modalBody.setAttribute('class', 'modal-body');
+  modalBody.setAttribute('id', 'jokesDiv');
+  modalContent.appendChild(modalBody);
 
   let modalFooter = document.createElement('div');
-    modalFooter.setAttribute('class', 'modal-footer');
-    modalContent.appendChild(modalFooter);
-  
+  modalFooter.setAttribute('class', 'modal-footer');
+  modalContent.appendChild(modalFooter);
+
   let modalCloseBtn = document.createElement('button');
-    modalCloseBtn.setAttribute('type', 'button');
-    modalCloseBtn.setAttribute('class', 'btn btn-dark');
-    modalCloseBtn.setAttribute('data-dismiss', 'modal');
-    modalCloseBtn.textContent = 'Close';
-    modalFooter.appendChild(modalCloseBtn);
+  modalCloseBtn.setAttribute('type', 'button');
+  modalCloseBtn.setAttribute('class', 'btn btn-dark');
+  modalCloseBtn.setAttribute('data-dismiss', 'modal');
+  modalCloseBtn.textContent = 'Close';
+  modalFooter.appendChild(modalCloseBtn);
 }
 
 intro();
-gameCountersFunc(); 
+gameCountersFunc();
 jokesSec();
