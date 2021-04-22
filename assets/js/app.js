@@ -827,16 +827,16 @@ function gameBoard() {
   cardsArrayChosen.sort(() => 0.5 - Math.random());
   // iterate through images of theme selected and create cards
   for (let i = 0; i < cardsArrayChosen.length; i++) {
-    let card = document.createElement('img');
+    var card = document.createElement('img');
     card.setAttribute('src', 'assets/img/squarelightgrey.png');
     card.setAttribute('data-id', i);
     card.addEventListener('click', flipcard);
     $('.grid').append(card);
   }
-}
+} 
 
 // check if the cards selected were a match and if not replace with placeholder card image
-function checkIfMatch() {
+async function checkIfMatch() {
   let cards = document.querySelectorAll('img');
   const firstCardId = cardsSelectedId[0];
   const secondCardId = cardsSelectedId[1];
@@ -846,10 +846,13 @@ function checkIfMatch() {
     cards[firstCardId].setAttribute('class', 'transparentImage');
     cards[secondCardId].setAttribute('class', 'transparentImage');
     cardsMatched.push(cardsSelected);
+    
   } else {
     cards[firstCardId].setAttribute('src', 'assets/img/squarelightgrey.png');
     cards[secondCardId].setAttribute('src', 'assets/img/squarelightgrey.png');
   }
+  // disable the user from selecting more than 2 cards before match check
+  await $('#gameboard').removeClass('loading'); 
   cardsSelected = [];
   cardsSelectedId = [];
   if (cardsMatched.length === cardsArrayChosen.length / 2) {
@@ -861,7 +864,7 @@ function checkIfMatch() {
 }
 
 // flip cards over when clicked
-function flipcard() {
+async function flipcard() {
   let cardId = this.getAttribute('data-id');
   // push cards selected into the emtpy array cardsSelected
   cardsSelected.push(cardsArrayChosen[cardId].name);
@@ -870,7 +873,7 @@ function flipcard() {
   this.setAttribute('src', cardsArrayChosen[cardId].img);
   // if two cards are selected then check for a match
   if (cardsSelected.length === 2) {
-    // set a timeout so that there is time for checkIfMatch function to run
     setTimeout(checkIfMatch, 500);
+    $('#gameboard').addClass('loading');
   }
 }
