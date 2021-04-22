@@ -846,21 +846,20 @@ async function checkIfMatch() {
     cards[firstCardId].setAttribute('class', 'transparentImage');
     cards[secondCardId].setAttribute('class', 'transparentImage');
     cardsMatched.push(cardsSelected);
-    
   } else {
     cards[firstCardId].setAttribute('src', 'assets/img/squarelightgrey.png');
     cards[secondCardId].setAttribute('src', 'assets/img/squarelightgrey.png');
   }
-  // disable the user from selecting more than 2 cards before match check
+  moves++;
+  movesText.textContent = `${moves} move(s)`;
+  // disable the user from selecting more than 2 cards until match checked
   await $('#gameboard').removeClass('loading'); 
   cardsSelected = [];
   cardsSelectedId = [];
   if (cardsMatched.length === cardsArrayChosen.length / 2) {
     scoreCalc();
     clearInterval(interval); // stop time from carrying on
-  }
-  moves++;
-  movesText.textContent = `${moves} move(s)`;
+  } 
 }
 
 // flip cards over when clicked

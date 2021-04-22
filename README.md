@@ -124,11 +124,12 @@ Please see below and also in the features sections where there are some images s
 * Whenever saving the user's name against the highscores list, it saved all of easy, medium and hard levels to 1 highscores table.  Changed this so that easy, medium and hard level scores are separated out with their own top 10 highscores list. 
 * As the user wins an alert was showing, this was changed to a modal instead for the total moves, time taken and score as well as congratulations message for the different levels. 
 * localStorage easy did not clear fully when running localStorage.clear() in console, this was due to duplicate code. Fixed.
+* If the user clicks on the cards too fast, same card twice or keeps clicking and doesn't wait for the cards to turn over, matching no longer works as it should. Fixed by using async function and await and adding css style to stop the user from engaging with the page until matches have been checked.
+* Extra move is counted at end but does not affect score. Fixed by moving moves to earlier in the function so that it does not add a move on the outer loop where it is no longer necessary as game has been completed.
+* Timer currently starts before first click and does not stop on last click. User informed that the game has started in instructions.
 
 **Some outstanding issues that still need to be resolved are:**
-* If the user clicks on the cards too fast, same card twice or keeps clicking and doesn't wait for the cards to turn over, matching no longer works as it should.  
-* Timer currently starts before first click and does not stop on last click. 
-* Extra move is counted on at end but does not affect score.
+* User can click the same card twice and should not be able to do this.
 
 I uploaded to GitHub and then also tested the website using tablets and mobiles.  Most responsive testing was completed in Chrome.
 
