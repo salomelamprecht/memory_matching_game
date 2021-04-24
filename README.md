@@ -124,13 +124,14 @@ Please see below and also in the features sections where there are some images s
 * Whenever saving the user's name against the highscores list, it saved all of easy, medium and hard levels to 1 highscores table.  Changed this so that easy, medium and hard level scores are separated out with their own top 10 highscores list. 
 * As the user wins an alert was showing, this was changed to a modal instead for the total moves, time taken and score as well as congratulations message for the different levels. 
 * localStorage easy did not clear fully when running localStorage.clear() in console, this was due to duplicate code. Fixed.
+* If the user clicks on the cards too fast, same card twice or keeps clicking and doesn't wait for the cards to turn over, matching no longer works as it should. Fixed by using async function and await and adding css style to stop the user from engaging with the page until matches have been checked.
+* Extra move is counted at end but does not affect score. Fixed by moving moves to earlier in the function so that it does not add a move on the outer loop where it is no longer necessary as game has been completed.
+* Timer currently starts before first click and does not stop on last click. User informed that the game has started in instructions.
 
 **Some outstanding issues that still need to be resolved are:**
-* If the user clicks on the cards too fast, same card twice or keeps clicking and doesn't wait for the cards to turn over, matching no longer works as it should.  
-* Timer currently starts before first click and does not stop on last click. 
-* Extra move is counted on at end but does not affect score.
+* User can click the same card twice and should not be able to do this.  
 
-I uploaded to GitHub and then also tested the website using tablets and mobiles.  Most responsive testing was completed in Chrome.
+I uploaded to GitHub and then also tested the website using tablets and mobiles.  Most responsive testing was completed in Chrome with developer tools.
 
 ### *Online Validators*
 #### *HTML Validator* (https://validator.w3.org/)
@@ -144,7 +145,7 @@ No errors found.
 Installed jshint in the terminal.  Validated code throughout. 
 
 ## Version Control
-I used git for version control.  Created a working-branch & working-branch2 for all added changes before committing to the master branch to ensure new additions to the game did not impact on the working game code in the master branch.  Used push and pull requests to update master branch with successful additions.  Working-branch has been left to show where a major change to html occurred.  Working-branch2 merged with master as this is the branch where I used javascript to create the majority of HTML in the content.js file.
+I used git for version control.  Created working branches for all added changes before committing to the master branch to ensure new additions to the game did not impact on the working game code in the master branch.  Used push and pull requests to update master branch with successful additions.  Working-branch has been left to show where a major change to html occurred.  Working-branch2 merged with master as this is the branch where I used javascript to create the majority of HTML in the content.js file. Working-branch3 used to apply final fixes to bugs.
 
 ## Deployment
 This project was developed using the VS Code IDE, committed to git and pushed to GitHub using git from the terminal.

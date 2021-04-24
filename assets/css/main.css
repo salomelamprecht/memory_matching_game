@@ -161,6 +161,11 @@ footer a:link:hover {
   color: darkslategrey;
 }
 
+.loading * {
+  /* disable all mouse events on subElements */
+  pointer-events: none;
+}
+
 @media (min-width: 1200px) {
   .container {
     width: 55%;

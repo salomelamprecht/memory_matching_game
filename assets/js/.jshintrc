@@ -1,4 +1,4 @@
-// stop jshint error when using const; let; spread operator
+// stop jshint error when using const; let; spread operator; async functions as not supported previously
 {
-  "esversion": 6
+  "esversion": 9
 }
