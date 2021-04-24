@@ -129,9 +129,9 @@ Please see below and also in the features sections where there are some images s
 * Timer currently starts before first click and does not stop on last click. User informed that the game has started in instructions.
 
 **Some outstanding issues that still need to be resolved are:**
-* User can click the same card twice and should not be able to do this.
+* User can click the same card twice and should not be able to do this.  
 
-I uploaded to GitHub and then also tested the website using tablets and mobiles.  Most responsive testing was completed in Chrome.
+I uploaded to GitHub and then also tested the website using tablets and mobiles.  Most responsive testing was completed in Chrome with developer tools.
 
 ### *Online Validators*
 #### *HTML Validator* (https://validator.w3.org/)
@@ -145,7 +145,7 @@ No errors found.
 Installed jshint in the terminal.  Validated code throughout. 
 
 ## Version Control
-I used git for version control.  Created a working-branch & working-branch2 for all added changes before committing to the master branch to ensure new additions to the game did not impact on the working game code in the master branch.  Used push and pull requests to update master branch with successful additions.  Working-branch has been left to show where a major change to html occurred.  Working-branch2 merged with master as this is the branch where I used javascript to create the majority of HTML in the content.js file.
+I used git for version control.  Created working branches for all added changes before committing to the master branch to ensure new additions to the game did not impact on the working game code in the master branch.  Used push and pull requests to update master branch with successful additions.  Working-branch has been left to show where a major change to html occurred.  Working-branch2 merged with master as this is the branch where I used javascript to create the majority of HTML in the content.js file. Working-branch3 used to apply final fixes to bugs.
 
 ## Deployment
 This project was developed using the VS Code IDE, committed to git and pushed to GitHub using git from the terminal.
